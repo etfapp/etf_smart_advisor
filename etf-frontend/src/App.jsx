@@ -7,7 +7,8 @@ import { TrendingUp, TrendingDown, DollarSign, Target, AlertTriangle, BarChart3,
 import './App.css'
 
 // API 基礎 URL
-const API_BASE_URL = 'https://5000-ifqpb6j7o9fbgmdr85hpq-6d9e8aff.manusvm.computer/api'
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 
+  'https://etf-smart-advisor.onrender.com/api'; // Fallback to Render URL if env var not set
 
 function App() {
   const [recommendation, setRecommendation] = useState(null)
@@ -80,6 +81,7 @@ function App() {
             <h1 className="text-4xl font-bold text-gray-800">台股 ETF 智能投資助手</h1>
           </div>
           <p className="text-lg text-gray-600">專為忙碌投資者設計，一鍵獲得專業投資建議</p>
+          <p className="text-sm text-gray-500">API Base URL: {API_BASE_URL}</p> {/* 新增這行 */}
         </div>
 
         {/* 一鍵獲取建議按鈕 */}
