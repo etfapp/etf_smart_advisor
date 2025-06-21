@@ -81,6 +81,7 @@ function App() {
             <h1 className="text-4xl font-bold text-gray-800">台股 ETF 智能投資助手</h1>
           </div>
           <p className="text-lg text-gray-600">專為忙碌投資者設計，一鍵獲得專業投資建議</p>
+          <p className="text-sm text-gray-500">API Base URL: {API_BASE_URL}</p> {/* 新增這行 */}
         </div>
 
         {/* 一鍵獲取建議按鈕 */}
@@ -391,35 +392,4 @@ function App() {
 }
 
 export default App
-
-
-00">{alert.risk_level}</Badge>
-                          </div>
-                          <p className="text-sm text-yellow-700">{alert.message}</p>
-                          <p className="text-xs text-gray-500 mt-1">建議行動: {alert.action}</p>
-                        </div>
-                      ))}
-                    </div>
-                  ) : (
-                    <div className="text-center py-8 text-gray-500">
-                      目前沒有發現顯著風險，請繼續保持關注
-                    </div>
-                  )}
-                </CardContent>
-              </Card>
-            </TabsContent>
-          </Tabs>
-        )} 
-
-        {/* 底部版權 */}
-        <div className="text-center text-gray-500 text-sm mt-8">
-          © 2024 台股 ETF 智能投資助手 - 投資有風險，請謹慎評估
-        </div>
-      </div>
-    </div>
-  )
-}
-
-export default App
-
 
