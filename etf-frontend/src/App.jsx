@@ -7,7 +7,8 @@ import { TrendingUp, TrendingDown, DollarSign, Target, AlertTriangle, BarChart3,
 import './App.css'
 
 // API 基礎 URL
-const API_BASE_URL = 'https://5000-ifqpb6j7o9fbgmdr85hpq-6d9e8aff.manusvm.computer/api'
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 
+  'https://etf-smart-advisor.onrender.com/api'; // Fallback to Render URL if env var not set
 
 function App() {
   const [recommendation, setRecommendation] = useState(null)
@@ -390,4 +391,35 @@ function App() {
 }
 
 export default App
+
+
+00">{alert.risk_level}</Badge>
+                          </div>
+                          <p className="text-sm text-yellow-700">{alert.message}</p>
+                          <p className="text-xs text-gray-500 mt-1">建議行動: {alert.action}</p>
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
+                    <div className="text-center py-8 text-gray-500">
+                      目前沒有發現顯著風險，請繼續保持關注
+                    </div>
+                  )}
+                </CardContent>
+              </Card>
+            </TabsContent>
+          </Tabs>
+        )} 
+
+        {/* 底部版權 */}
+        <div className="text-center text-gray-500 text-sm mt-8">
+          © 2024 台股 ETF 智能投資助手 - 投資有風險，請謹慎評估
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default App
+
 
