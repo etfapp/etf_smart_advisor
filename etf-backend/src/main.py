@@ -16,10 +16,10 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 app = Flask(__name__, static_folder=os.path.join(os.path.dirname(__file__), 'static'))
-CORS(app, resources={r"/api/*": {"origins": "https://etf-smart-advisor.vercel.app"}})
 app.config['SECRET_KEY'] = 'asdf#FGSgvasgf$5$WGT'
 
 # 啟用 CORS
+CORS(app)
 
 app.register_blueprint(user_bp, url_prefix='/api')
 
