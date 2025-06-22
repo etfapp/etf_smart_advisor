@@ -7,7 +7,7 @@ import { TrendingUp, TrendingDown, DollarSign, Target, AlertTriangle, BarChart3,
 import './App.css'
 
 // API 基礎 URL
-const API_BASE_URL = 'https://5000-ifqpb6j7o9fbgmdr85hpq-6d9e8aff.manusvm.computer/api'
+const API_BASE_URL = 'https://etf-smart-advisor.onrender.com'
 
 function App() {
   const [recommendation, setRecommendation] = useState(null)
