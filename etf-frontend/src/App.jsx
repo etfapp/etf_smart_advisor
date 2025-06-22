@@ -22,7 +22,7 @@ function App() {
     setLoading(true)
     setError(null)
     try {
-      const response = await fetch(`${API_BASE_URL}/etf/recommendations`, {
+      const response = await fetch(`${API_BASE_URL}/api/daily-recommendations`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
