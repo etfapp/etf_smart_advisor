@@ -8,7 +8,7 @@ import './App.css'
 
 // API 基礎 URL
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 
-  (import.meta.env.DEV ? 'http://localhost:5000/api' : 'https://etf-smart-advisor.onrender.com/api'); // 開發環境使用本地，生產環境使用 Render
+  'https://etf-smart-advisor.onrender.com/api'); // 開發環境使用本地，生產環境使用 Render
 
 function App() {
   const [recommendation, setRecommendation] = useState(null)
