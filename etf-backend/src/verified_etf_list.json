@@ -1,656 +1,1622 @@
 [
   {
     "symbol": "0050",
-    "name": "Yuanta/P-shares Taiwan Top 50 ETF",
-    "valid": true,
-    "price": 48.18000030517578
-  },
-  {
-    "symbol": "006204",
-    "name": "Sinopac TAIEX ETF",
-    "valid": true,
-    "price": 113.55000305175781
-  },
-  {
-    "symbol": "006203",
-    "name": "Yuanta/P-shares MSCI Taiwan ETF",
-    "valid": true,
-    "price": 88.5999984741211
-  },
-  {
-    "symbol": "0056",
-    "name": "Yuanta/P-shares Taiwan Dividend Plus ETF",
-    "valid": true,
-    "price": 34.61000061035156
-  },
-  {
-    "symbol": "0053",
-    "name": "Yuanta/P-shares Taiwan Electronics Tech ETF",
-    "valid": true,
-    "price": 102.69999694824219
+    "name": "元大台灣50",
+    "category": "市值型",
+    "valid": true
   },
   {
     "symbol": "0051",
-    "name": "Yuanta/P-shares Taiwan Mid-Cap 100 ETF",
-    "valid": true,
-    "price": 74.25
+    "name": "元大中型100",
+    "category": "市值型",
+    "valid": true
   },
   {
-    "symbol": "006205",
-    "name": "Fubon SSE180 ETF",
-    "valid": true,
-    "price": 30.75
-  },
-  {
-    "symbol": "0055",
-    "name": "Yuanta/P-shares MSCI Taiwan Financials ETF",
-    "valid": true,
-    "price": 28.860000610351562
+    "symbol": "0051",
+    "name": "元大中型100",
+    "category": "中小型",
+    "valid": true
   },
   {
     "symbol": "0052",
-    "name": "Fubon Taiwan Technology Tracker Fund",
-    "valid": true,
-    "price": 187.10000610351562
+    "name": "富邦科技",
+    "category": "科技",
+    "valid": true
   },
   {
-    "symbol": "006208",
-    "name": "Fubon FTSE TWSE Taiwan 50 ETF",
-    "valid": true,
-    "price": 112.94999694824219
+    "symbol": "0053",
+    "name": "元大電子",
+    "category": "科技",
+    "valid": true
   },
   {
-    "symbol": "006206",
-    "name": "Yuanta/P-shares SSE50 ETF",
-    "valid": true,
-    "price": 29.81999969482422
+    "symbol": "0055",
+    "name": "元大MSCI金融",
+    "category": "金融",
+    "valid": true
   },
   {
-    "symbol": "006207",
-    "name": "Fuh Hwa CSI 300 A Shares Exchange Traded Fund",
-    "valid": true,
-    "price": 23.329999923706055
+    "symbol": "0056",
+    "name": "元大高股息",
+    "category": "高股息",
+    "valid": true
   },
   {
     "symbol": "0061",
-    "name": "W.I.S.E. Yuanta/P-shares CSI 300 ETF",
-    "valid": true,
-    "price": 17.81999969482422
+    "name": "元大寶滬深",
+    "category": "國外",
+    "valid": true
   },
   {
-    "symbol": "0057",
-    "name": "Fubon MSCI Taiwan ETF",
-    "valid": true,
-    "price": 142.1999969482422
+    "symbol": "006203",
+    "name": "元大MSCI台灣",
+    "category": "市值型",
+    "valid": true
+  },
+  {
+    "symbol": "006204",
+    "name": "永豐臺灣加權",
+    "category": "市值型",
+    "valid": true
+  },
+  {
+    "symbol": "006205",
+    "name": "富邦上証",
+    "category": "國外",
+    "valid": true
+  },
+  {
+    "symbol": "006206",
+    "name": "元大上證50",
+    "category": "國外",
+    "valid": true
+  },
+  {
+    "symbol": "006207",
+    "name": "復華滬深",
+    "category": "國外",
+    "valid": true
+  },
+  {
+    "symbol": "006208",
+    "name": "富邦台50",
+    "category": "市值型",
+    "valid": true
   },
   {
     "symbol": "00631L",
-    "name": "Yuanta Daily Taiwan 50 Bull 2X ETF",
-    "valid": true,
-    "price": 213.75
-  },
-  {
-    "symbol": "00633L",
-    "name": "Fubon SSE180 Leveraged 2X Index ETF",
-    "valid": true,
-    "price": 37.959999084472656
+    "name": "元大台灣50正2",
+    "category": "槓桿型",
+    "valid": true
   },
   {
     "symbol": "00632R",
-    "name": "Yuanta Daily Taiwan 50 Bear -1X ETF",
-    "valid": true,
-    "price": 22.030000686645508
+    "name": "元大台灣50反1",
+    "category": "槓桿型",
+    "valid": true
   },
   {
-    "symbol": "00640L",
-    "name": "Fubon TOPIX Leveraged 2X Index ETF",
-    "valid": true,
-    "price": 51.54999923706055
+    "symbol": "00633L",
+    "name": "富邦上証正2",
+    "category": "槓桿型",
+    "valid": true
   },
   {
     "symbol": "00634R",
-    "name": "Fubon SSE180 Inversed Index ETF",
-    "valid": true,
-    "price": 3.7100000381469727
+    "name": "富邦上証反1",
+    "category": "槓桿型",
+    "valid": true
   },
   {
-    "symbol": "00638R",
-    "name": "Yuanta/P-Shrs CSI 300 1X ETF",
-    "valid": true,
-    "price": 7.690000057220459
-  },
-  {
-    "symbol": "00637L",
-    "name": "Yuanta/P-Shrs CSI 300 2X ETF",
-    "valid": true,
-    "price": 15.100000381469727
+    "symbol": "00635U",
+    "name": "元大S&P黃金",
+    "category": "期貨",
+    "valid": true
   },
   {
     "symbol": "00636",
-    "name": "Cathay FTSE China A50 ETF",
-    "valid": true,
-    "price": 21.56999969482422
+    "name": "國泰中國A50",
+    "category": "國外",
+    "valid": true
+  },
+  {
+    "symbol": "00637L",
+    "name": "元大滬深300正2",
+    "category": "槓桿型",
+    "valid": true
+  },
+  {
+    "symbol": "00638R",
+    "name": "元大滬深300反1",
+    "category": "槓桿型",
+    "valid": true
+  },
+  {
+    "symbol": "00639",
+    "name": "富邦深100",
+    "category": "國外",
+    "valid": true
+  },
+  {
+    "symbol": "00640L",
+    "name": "富邦日本正2",
+    "category": "槓桿型",
+    "valid": true
   },
   {
     "symbol": "00641R",
-    "name": "Fubon TOPIX Inverse -1X Index ETF",
-    "valid": true,
-    "price": 5.730000019073486
+    "name": "富邦日本反1",
+    "category": "槓桿型",
+    "valid": true
   },
   {
     "symbol": "00642U",
-    "name": "Yuanta S&P GSCI Crude Oil ER Futures ETF",
-    "valid": true,
-    "price": 16.059999465942383
+    "name": "元大S&P石油",
+    "category": "期貨",
+    "valid": true
+  },
+  {
+    "symbol": "00643",
+    "name": "群益深証中小",
+    "category": "國外",
+    "valid": true
+  },
+  {
+    "symbol": "00645",
+    "name": "富邦日本",
+    "category": "國外",
+    "valid": true
   },
   {
     "symbol": "00646",
-    "name": "Yuanta S&P 500 ETF",
-    "valid": true,
-    "price": 56.04999923706055
+    "name": "元大S&P500",
+    "category": "國外",
+    "valid": true
   },
   {
     "symbol": "00647L",
-    "name": "Yuanta Daily S&P 500 Bull 2X ETF",
-    "valid": true,
-    "price": 92.5
-  },
-  {
-    "symbol": "00650L",
-    "name": "Fuh Hwa Daily Hang Seng Leveraged 2X ETF",
-    "valid": true,
-    "price": 15.289999961853027
-  },
-  {
-    "symbol": "00652",
-    "name": "Fubon NIFTY ETF",
-    "valid": true,
-    "price": 35.95000076293945
+    "name": "元大S&P500正2",
+    "category": "槓桿型",
+    "valid": true
   },
   {
     "symbol": "00648R",
-    "name": "Yuanta Daily S&P 500 Bear 1X ETF",
-    "valid": true,
-    "price": 4.78000020980835
+    "name": "元大S&P500反1",
+    "category": "槓桿型",
+    "valid": true
+  },
+  {
+    "symbol": "00650L",
+    "name": "復華香港正2",
+    "category": "槓桿型",
+    "valid": true
   },
   {
     "symbol": "00651R",
-    "name": "Fuh Hwa Daily Hang Seng Inversed ETF",
-    "valid": true,
-    "price": 5.679999828338623
+    "name": "復華香港反1",
+    "category": "槓桿型",
+    "valid": true
   },
   {
-    "symbol": "00655L",
-    "name": "Cathay FTSE China A50 Daily Leveraged 2X ETF",
-    "valid": true,
-    "price": 26.34000015258789
-  },
-  {
-    "symbol": "00654R",
-    "name": "Fubon NIFTY -1 Inverse Index ETF",
-    "valid": true,
-    "price": 6.21999979019165
-  },
-  {
-    "symbol": "00656R",
-    "name": "Cathay FTSE China A50 Daily Inversed ETF",
-    "valid": true,
-    "price": 6.809999942779541
+    "symbol": "00652",
+    "name": "富邦印度",
+    "category": "國外",
+    "valid": true
   },
   {
     "symbol": "00653L",
-    "name": "Fubon NIFTY 2X Leveraged Index ETF",
-    "valid": true,
-    "price": 57.04999923706055
+    "name": "富邦印度正2",
+    "category": "槓桿型",
+    "valid": true
+  },
+  {
+    "symbol": "00654R",
+    "name": "富邦印度反1",
+    "category": "槓桿型",
+    "valid": true
+  },
+  {
+    "symbol": "00655L",
+    "name": "國泰中國A50正2",
+    "category": "槓桿型",
+    "valid": true
+  },
+  {
+    "symbol": "00656R",
+    "name": "國泰中國A50反1",
+    "category": "槓桿型",
+    "valid": true
   },
   {
     "symbol": "00657",
-    "name": "Cathay Nikkei 225 Currency-hedged ETF Fund",
-    "valid": true,
-    "price": 45.52000045776367
+    "name": "國泰日經225",
+    "category": "國外",
+    "valid": true
   },
   {
-    "symbol": "00666R",
-    "name": "Fubon Hang Seng H-Share Inverse Index ETF",
-    "valid": true,
-    "price": 9.069999694824219
+    "symbol": "00660",
+    "name": "元大歐洲50",
+    "category": "國外",
+    "valid": true
   },
   {
-    "symbol": "00663L",
-    "name": "Cathay TAIEX Daily Leveraged 2X ETF",
-    "valid": true,
-    "price": 27.889999389648438
-  },
-  {
-    "symbol": "00664R",
-    "name": "Cathay TAIEX Daily Inversed ETF",
-    "valid": true,
-    "price": 3.549999952316284
+    "symbol": "00661",
+    "name": "元大日經225",
+    "category": "國外",
+    "valid": true
   },
   {
     "symbol": "00662",
-    "name": "Fubon NASDAQ-100 Index ETF",
-    "valid": true,
-    "price": 83.94999694824219
+    "name": "富邦NASDAQ",
+    "category": "國外",
+    "valid": true
   },
   {
-    "symbol": "00669R",
-    "name": "Cathay DJIA Inv 1X ETF",
-    "valid": true,
-    "price": 6.170000076293945
+    "symbol": "00663L",
+    "name": "國泰臺灣加權正2",
+    "category": "槓桿型",
+    "valid": true
   },
   {
-    "symbol": "00674R",
-    "name": "Yuanta S&P GSCI Gold 1x Inverse ER Futures ETF",
-    "valid": true,
-    "price": 7.590000152587891
+    "symbol": "00664R",
+    "name": "國泰臺灣加權反1",
+    "category": "槓桿型",
+    "valid": true
   },
   {
     "symbol": "00665L",
-    "name": "Fubon Hang Seng H-Share Leveraged Index ETF",
-    "valid": true,
-    "price": 10.359999656677246
+    "name": "富邦恒生國企正2",
+    "category": "槓桿型",
+    "valid": true
   },
   {
-    "symbol": "00671R",
-    "name": "Fubon NASDAQ-100 -1X Inverse Index ETF",
-    "valid": true,
-    "price": 3.25
+    "symbol": "00666R",
+    "name": "富邦恒生國企反1",
+    "category": "槓桿型",
+    "valid": true
   },
   {
-    "symbol": "00673R",
-    "name": "Yuanta S&P GSCI Crude Oil 1x Inverse ER Futures ETF",
-    "valid": true,
-    "price": 6.699999809265137
+    "symbol": "00668",
+    "name": "國泰美國道瓊",
+    "category": "國外",
+    "valid": true
   },
   {
-    "symbol": "00675L",
-    "name": "Fubon TAIEX Daily 2X Leveraged ETF",
-    "valid": true,
-    "price": 85.0
-  },
-  {
-    "symbol": "00680L",
-    "name": "Yuanta Daily U.S. Treasury 20+ Year Bond Bull 2X ETF",
-    "valid": true,
-    "price": 7.090000152587891
-  },
-  {
-    "symbol": "00676R",
-    "name": "Fubon TAIEX Daily -1X Inverse ETF",
-    "valid": true,
-    "price": 12.0600004196167
+    "symbol": "00669R",
+    "name": "國泰美國道瓊反1",
+    "category": "槓桿型",
+    "valid": true
   },
   {
     "symbol": "00670L",
-    "name": "Fubon NASDAQ-100 2X Leveraged Index ETF",
-    "valid": true,
-    "price": 131.8000030517578
+    "name": "富邦NASDAQ正2",
+    "category": "槓桿型",
+    "valid": true
+  },
+  {
+    "symbol": "00671R",
+    "name": "富邦NASDAQ反1",
+    "category": "槓桿型",
+    "valid": true
+  },
+  {
+    "symbol": "00673R",
+    "name": "元大S&P原油反1",
+    "category": "期貨",
+    "valid": true
+  },
+  {
+    "symbol": "00674R",
+    "name": "元大S&P黃金反1",
+    "category": "期貨",
+    "valid": true
+  },
+  {
+    "symbol": "00675L",
+    "name": "富邦臺灣加權正2",
+    "category": "槓桿型",
+    "valid": true
+  },
+  {
+    "symbol": "00676R",
+    "name": "富邦臺灣加權反1",
+    "category": "槓桿型",
+    "valid": true
+  },
+  {
+    "symbol": "00678",
+    "name": "群益那斯達克生技",
+    "category": "國外",
+    "valid": true
+  },
+  {
+    "symbol": "00679B",
+    "name": "元大美國政府20年期",
+    "category": "債券",
+    "valid": true
+  },
+  {
+    "symbol": "00680L",
+    "name": "元大美債20正2",
+    "category": "槓桿型",
+    "valid": true
   },
   {
     "symbol": "00681R",
-    "name": "Yuanta Daily U.S. Treasury 20+ Year Bond Bear 1X ETF",
-    "valid": true,
-    "price": 20.8700008392334
+    "name": "元大美債20反1",
+    "category": "槓桿型",
+    "valid": true
   },
   {
     "symbol": "00682U",
-    "name": "Yuanta S&P US Dollar ER Futures ETF",
-    "valid": true,
-    "price": 19.920000076293945
+    "name": "元大美元指數",
+    "category": "期貨",
+    "valid": true
   },
   {
     "symbol": "00683L",
-    "name": "Yuanta S&P US Dollar 2x Leverage ER Futures ETF",
-    "valid": true,
-    "price": 20.270000457763672
-  },
-  {
-    "symbol": "00685L",
-    "name": "Capital Taiex Daily Leveraged 2X ETF",
-    "valid": true,
-    "price": 76.19999694824219
-  },
-  {
-    "symbol": "00690",
-    "name": "Mega Taiwan Blue Chip 30 ETF",
-    "valid": true,
-    "price": 34.189998626708984
-  },
-  {
-    "symbol": "00686R",
-    "name": "Capital Taiex Daily Inversed -1X ETF",
-    "valid": true,
-    "price": 2.1600000858306885
+    "name": "元大美元指正2",
+    "category": "期貨",
+    "valid": true
   },
   {
     "symbol": "00684R",
-    "name": "Yuanta S&P US Dollar 1x Inverse ER Futures ETF",
-    "valid": true,
-    "price": 15.859999656677246
+    "name": "元大美元指反1",
+    "category": "期貨",
+    "valid": true
+  },
+  {
+    "symbol": "00685L",
+    "name": "群益臺灣加權正2",
+    "category": "槓桿型",
+    "valid": true
+  },
+  {
+    "symbol": "00686R",
+    "name": "群益臺灣加權反1",
+    "category": "槓桿型",
+    "valid": true
+  },
+  {
+    "symbol": "00687B",
+    "name": "街口美國政府債券",
+    "category": "債券",
+    "valid": true
   },
   {
     "symbol": "00688L",
-    "name": "Cathay US Treasury 20+ YR Lev 2X ETF",
-    "valid": true,
-    "price": 7.070000171661377
+    "name": "國泰20年美債正2",
+    "category": "槓桿型",
+    "valid": true
   },
   {
     "symbol": "00689R",
-    "name": "Cathay US Treasury 20+ YR Inv 1X ETF",
-    "valid": true,
-    "price": 21.329999923706055
+    "name": "國泰20年美債反1",
+    "category": "槓桿型",
+    "valid": true
+  },
+  {
+    "symbol": "00690",
+    "name": "兆豐臺灣藍籌30",
+    "category": "市值型",
+    "valid": true
   },
   {
     "symbol": "00692",
-    "name": "Fubon TWSE Corporate Governance 100 ETF",
-    "valid": true,
-    "price": 44.380001068115234
+    "name": "富邦公司治理",
+    "category": "市值型",
+    "valid": true
+  },
+  {
+    "symbol": "00692",
+    "name": "富邦公司治理",
+    "category": "金融",
+    "valid": true
   },
   {
     "symbol": "00693U",
-    "name": "JKO S&P GSCI Soybeans ER Futures ETF",
-    "valid": true,
-    "price": 20.1200008392334
+    "name": "街口S&P黃豆",
+    "category": "期貨",
+    "valid": true
+  },
+  {
+    "symbol": "00694B",
+    "name": "群益7年以上投等債",
+    "category": "期貨",
+    "valid": true
+  },
+  {
+    "symbol": "00694B",
+    "name": "群益7年以上投等債",
+    "category": "債券",
+    "valid": true
+  },
+  {
+    "symbol": "00695B",
+    "name": "群益投等債20+",
+    "category": "期貨",
+    "valid": true
+  },
+  {
+    "symbol": "00695B",
+    "name": "群益投等債20+",
+    "category": "債券",
+    "valid": true
+  },
+  {
+    "symbol": "00696B",
+    "name": "群益25年以上美債",
+    "category": "期貨",
+    "valid": true
+  },
+  {
+    "symbol": "00696B",
+    "name": "群益25年以上美債",
+    "category": "債券",
+    "valid": true
+  },
+  {
+    "symbol": "00697B",
+    "name": "群益15年IG金融債",
+    "category": "期貨",
+    "valid": true
+  },
+  {
+    "symbol": "00697B",
+    "name": "群益15年IG金融債",
+    "category": "債券",
+    "valid": true
+  },
+  {
+    "symbol": "00698B",
+    "name": "群益1-5年投等債",
+    "category": "期貨",
+    "valid": true
+  },
+  {
+    "symbol": "00698B",
+    "name": "群益1-5年投等債",
+    "category": "債券",
+    "valid": true
+  },
+  {
+    "symbol": "00699L",
+    "name": "群益NBI生技正2",
+    "category": "期貨",
+    "valid": true
+  },
+  {
+    "symbol": "00700L",
+    "name": "群益道瓊美國地產正2",
+    "category": "期貨",
+    "valid": true
   },
   {
     "symbol": "00701",
-    "name": "Cathay TIP TAIEX+ Low Volatility Select 30 ETF",
-    "valid": true,
-    "price": 28.0
+    "name": "國泰股利精選30",
+    "category": "高股息",
+    "valid": true
   },
   {
-    "symbol": "00702",
-    "name": "Cathay S&P 500 Low Volatility High Dividend ETF",
-    "valid": true,
-    "price": 21.920000076293945
+    "symbol": "00706",
+    "name": "元大MSCI亞太",
+    "category": "國外",
+    "valid": true
   },
   {
-    "symbol": "00700",
-    "name": "Fubon Hang Seng China Enterprises ETF",
-    "valid": true,
-    "price": 16.799999237060547
+    "symbol": "00707",
+    "name": "復華NASDAQ",
+    "category": "國外",
+    "valid": true
   },
   {
-    "symbol": "00703",
-    "name": "Taishin MSCI China ETF",
-    "valid": true,
-    "price": 18.559999465942383
+    "symbol": "00708",
+    "name": "元大MSCI印尼",
+    "category": "國外",
+    "valid": true
   },
   {
     "symbol": "00709",
-    "name": "Fubon FTSE Developed Europe ETF",
-    "valid": true,
-    "price": 31.280000686645508
-  },
-  {
-    "symbol": "00706L",
-    "name": "Yuanta S&P Japanese Yen 2x Leverage ER Futures ETF",
-    "valid": true,
-    "price": 6.190000057220459
-  },
-  {
-    "symbol": "00708L",
-    "name": "Yuanta S&P GSCI Gold 2X Leveraged ER Futures ETF",
-    "valid": true,
-    "price": 57.0
-  },
-  {
-    "symbol": "00715L",
-    "name": "JKO S&P GSCI Brent Crude 2X Leveraged ER Futures ETF",
-    "valid": true,
-    "price": 10.699999809265137
-  },
-  {
-    "symbol": "00714",
-    "name": "Capital Dow Jones U.S. Real Estate Index ETF",
-    "valid": true,
-    "price": 19.40999984741211
-  },
-  {
-    "symbol": "00711B",
-    "name": "Fuh Hwa Emerging Market 10+ Yr Bond ETF",
-    "valid": true,
-    "price": 14.539999961853027
-  },
-  {
-    "symbol": "00713",
-    "name": "Yuanta Taiwan High Dividend Low Volatility ETF",
-    "valid": true,
-    "price": 50.29999923706055
+    "name": "元大MSCI印度",
+    "category": "國外",
+    "valid": true
   },
   {
     "symbol": "00712",
-    "name": "Fuh Hwa FTSE Mortgage REITs ETF",
-    "valid": true,
-    "price": 8.199999809265137
+    "name": "復華富時不動產",
+    "category": "國外",
+    "valid": true
   },
   {
-    "symbol": "00710B",
-    "name": "Fuh Hwa 1-5 Yr High Yield ETF",
-    "valid": true,
-    "price": 17.84000015258789
+    "symbol": "00713",
+    "name": "元大台灣高息低波",
+    "category": "市值型",
+    "valid": true
   },
   {
-    "symbol": "00707R",
-    "name": "Yuanta S&P Japanese Yen 1x Inverse ER Futures ETF",
-    "valid": true,
-    "price": 28.299999237060547
+    "symbol": "00713",
+    "name": "元大台灣高息低波",
+    "category": "高股息",
+    "valid": true
+  },
+  {
+    "symbol": "00714",
+    "name": "群益道瓊美國地產",
+    "category": "國外",
+    "valid": true
   },
   {
     "symbol": "00717",
-    "name": "Fubon S&P US Preferred Stock ETF",
-    "valid": true,
-    "price": 13.850000381469727
+    "name": "富邦美國特別股",
+    "category": "國外",
+    "valid": true
+  },
+  {
+    "symbol": "00719B",
+    "name": "元大美國政府1至3年期債券",
+    "category": "債券",
+    "valid": true
+  },
+  {
+    "symbol": "00720",
+    "name": "元大歐洲STOXX600",
+    "category": "國外",
+    "valid": true
+  },
+  {
+    "symbol": "00720B",
+    "name": "元大投資級公司債",
+    "category": "債券",
+    "valid": true
+  },
+  {
+    "symbol": "00721B",
+    "name": "元大中國政策債券",
+    "category": "債券",
+    "valid": true
+  },
+  {
+    "symbol": "00722B",
+    "name": "群益投等債15+",
+    "category": "債券",
+    "valid": true
+  },
+  {
+    "symbol": "00723B",
+    "name": "群益投等債10+",
+    "category": "債券",
+    "valid": true
+  },
+  {
+    "symbol": "00724B",
+    "name": "群益投等債5-10",
+    "category": "債券",
+    "valid": true
+  },
+  {
+    "symbol": "00725B",
+    "name": "國泰投資級公司債",
+    "category": "債券",
+    "valid": true
+  },
+  {
+    "symbol": "00726B",
+    "name": "國泰A級公司債",
+    "category": "債券",
+    "valid": true
+  },
+  {
+    "symbol": "00727B",
+    "name": "國泰5年以下A級公司債",
+    "category": "債券",
+    "valid": true
+  },
+  {
+    "symbol": "00728B",
+    "name": "國泰A級公司債15+",
+    "category": "債券",
+    "valid": true
   },
   {
     "symbol": "00730",
-    "name": "Fubon Dow Jones Taiwan High-Quality Dividend 30 ETF",
-    "valid": true,
-    "price": 22.040000915527344
+    "name": "富邦臺灣優質高息",
+    "category": "高股息",
+    "valid": true
   },
   {
     "symbol": "00731",
-    "name": "Fuh Hwa FTSE Taiwan High Div Low Vol ETF",
-    "valid": true,
-    "price": 66.05000305175781
-  },
-  {
-    "symbol": "00728",
-    "name": "FSITC Taiwan Industry Elite 30 ETF",
-    "valid": true,
-    "price": 30.229999542236328
+    "name": "復華富時高息低波",
+    "category": "高股息",
+    "valid": true
   },
   {
     "symbol": "00733",
-    "name": "Fubon Taiwan Small-Mid Cap Alpha Momentum 50 ETF",
-    "valid": true,
-    "price": 38.79999923706055
-  },
-  {
-    "symbol": "00736",
-    "name": "Cathay FTSE Emerging Markets ETF",
-    "valid": true,
-    "price": 23.709999084472656
-  },
-  {
-    "symbol": "00735",
-    "name": "Cathay Korea/Taiwan IT Premier ETF",
-    "valid": true,
-    "price": 34.29999923706055
+    "name": "富邦臺灣中小",
+    "category": "中小型",
+    "valid": true
   },
   {
     "symbol": "00737",
-    "name": "Cathay Nasdaq CTA Artificial Intelligence and Robotics ETF",
-    "valid": true,
-    "price": 30.25
+    "name": "國泰納斯達克100",
+    "category": "國外",
+    "valid": true
   },
   {
-    "symbol": "00738U",
-    "name": "Yuanta DJCI Silver ER Futures ETF",
-    "valid": true,
-    "price": 30.309999465942383
+    "symbol": "00751B",
+    "name": "元大AAA至A公司債",
+    "category": "債券",
+    "valid": true
   },
   {
-    "symbol": "00739",
-    "name": "Yuanta MSCI China A ETF",
-    "valid": true,
-    "price": 21.0
+    "symbol": "00752B",
+    "name": "中信高評級公司債",
+    "category": "債券",
+    "valid": true
   },
   {
-    "symbol": "00753L",
-    "name": "CTBC China 50 2X",
-    "valid": true,
-    "price": 10.050000190734863
+    "symbol": "00753B",
+    "name": "中信美國公債20年",
+    "category": "債券",
+    "valid": true
   },
   {
-    "symbol": "00752",
-    "name": "CTBC China 50",
-    "valid": true,
-    "price": 22.6200008392334
+    "symbol": "00754B",
+    "name": "中信美國政府債券20年",
+    "category": "債券",
+    "valid": true
+  },
+  {
+    "symbol": "00755B",
+    "name": "中信美國政府債券1-3年",
+    "category": "債券",
+    "valid": true
+  },
+  {
+    "symbol": "00756B",
+    "name": "中信美國政府債券7-10年",
+    "category": "債券",
+    "valid": true
   },
   {
     "symbol": "00757",
-    "name": "UPAMC NYSE FANG+ ETF",
-    "valid": true,
-    "price": 100.44999694824219
+    "name": "統一FANG+",
+    "category": "國外",
+    "valid": true
   },
   {
-    "symbol": "00763U",
-    "name": "JKO Dow Jones Copper ER Futures ETF",
-    "valid": true,
-    "price": 27.690000534057617
+    "symbol": "00760B",
+    "name": "國泰美國政府債券1-3年",
+    "category": "債券",
+    "valid": true
+  },
+  {
+    "symbol": "00761B",
+    "name": "國泰美國政府債券7-10年",
+    "category": "債券",
+    "valid": true
   },
   {
     "symbol": "00762",
-    "name": "Yuanta STOXX Global Artificial Intelligence ETF",
-    "valid": true,
-    "price": 67.1500015258789
+    "name": "元大全球美元投等債",
+    "category": "國外",
+    "valid": true
   },
   {
-    "symbol": "00770",
-    "name": "Cathay S&P North Amrcn Tchnlgy Sctr ETF",
-    "valid": true,
-    "price": 44.939998626708984
+    "symbol": "00762B",
+    "name": "元大全球美元投等債",
+    "category": "債券",
+    "valid": true
+  },
+  {
+    "symbol": "00763B",
+    "name": "元大美國政府債券1-3年",
+    "category": "債券",
+    "valid": true
+  },
+  {
+    "symbol": "00764B",
+    "name": "元大美國政府債券7-10年",
+    "category": "債券",
+    "valid": true
+  },
+  {
+    "symbol": "00765B",
+    "name": "中信美國政府債券1-3年",
+    "category": "債券",
+    "valid": true
+  },
+  {
+    "symbol": "00766B",
+    "name": "中信美國政府債券7-10年",
+    "category": "債券",
+    "valid": true
+  },
+  {
+    "symbol": "00767B",
+    "name": "中信美國政府債券20年",
+    "category": "債券",
+    "valid": true
+  },
+  {
+    "symbol": "00768B",
+    "name": "復華美國新興債券",
+    "category": "債券",
+    "valid": true
+  },
+  {
+    "symbol": "00769B",
+    "name": "復華美國短期政府債券",
+    "category": "債券",
+    "valid": true
+  },
+  {
+    "symbol": "00770B",
+    "name": "復華美國短期高收益債券",
+    "category": "債券",
+    "valid": true
   },
   {
     "symbol": "00771",
-    "name": "Yuanta S&P U.S. High Yield Preferred Stock ETF",
-    "valid": true,
-    "price": 15.140000343322754
+    "name": "元大美國政府1至3年期債券",
+    "category": "國外",
+    "valid": true
   },
   {
-    "symbol": "00783",
-    "name": "Fubon China CSI 500 Index ETF",
-    "valid": true,
-    "price": 18.290000915527344
+    "symbol": "00771B",
+    "name": "元大美國政府1至3年期債券",
+    "category": "債券",
+    "valid": true
+  },
+  {
+    "symbol": "00772",
+    "name": "中信高評級公司債",
+    "category": "國外",
+    "valid": true
+  },
+  {
+    "symbol": "00772B",
+    "name": "中信高評級公司債",
+    "category": "債券",
+    "valid": true
+  },
+  {
+    "symbol": "00773",
+    "name": "中信美國公債20年",
+    "category": "國外",
+    "valid": true
+  },
+  {
+    "symbol": "00773B",
+    "name": "中信美國公債20年",
+    "category": "債券",
+    "valid": true
+  },
+  {
+    "symbol": "00774B",
+    "name": "群益15年IG金融債",
+    "category": "債券",
+    "valid": true
+  },
+  {
+    "symbol": "00775B",
+    "name": "國泰美國政府債券20年",
+    "category": "債券",
+    "valid": true
+  },
+  {
+    "symbol": "00776B",
+    "name": "國泰美國政府債券7-10年",
+    "category": "債券",
+    "valid": true
+  },
+  {
+    "symbol": "00777B",
+    "name": "國泰美國政府債券1-3年",
+    "category": "債券",
+    "valid": true
+  },
+  {
+    "symbol": "00778B",
+    "name": "國泰A級公司債",
+    "category": "債券",
+    "valid": true
+  },
+  {
+    "symbol": "00779B",
+    "name": "凱基美債25+",
+    "category": "債券",
+    "valid": true
+  },
+  {
+    "symbol": "00780B",
+    "name": "凱基美債10+",
+    "category": "債券",
+    "valid": true
+  },
+  {
+    "symbol": "00781B",
+    "name": "凱基美債5-10",
+    "category": "債券",
+    "valid": true
+  },
+  {
+    "symbol": "00782B",
+    "name": "凱基美債1-5",
+    "category": "債券",
+    "valid": true
+  },
+  {
+    "symbol": "00783B",
+    "name": "凱基AAA-A公司債",
+    "category": "債券",
+    "valid": true
+  },
+  {
+    "symbol": "00784B",
+    "name": "富邦美國政府債券20年",
+    "category": "債券",
+    "valid": true
+  },
+  {
+    "symbol": "00785B",
+    "name": "富邦金融投等債",
+    "category": "債券",
+    "valid": true
+  },
+  {
+    "symbol": "00786B",
+    "name": "富邦美國政府債券1-3年",
+    "category": "債券",
+    "valid": true
+  },
+  {
+    "symbol": "00787B",
+    "name": "富邦美國政府債券7-10年",
+    "category": "債券",
+    "valid": true
+  },
+  {
+    "symbol": "00788B",
+    "name": "富邦美國投等債券",
+    "category": "債券",
+    "valid": true
+  },
+  {
+    "symbol": "00789B",
+    "name": "富邦美國政府債券",
+    "category": "債券",
+    "valid": true
+  },
+  {
+    "symbol": "00790B",
+    "name": "富邦美國政府債券3-7年",
+    "category": "債券",
+    "valid": true
+  },
+  {
+    "symbol": "00791B",
+    "name": "群益美國新興債券",
+    "category": "債券",
+    "valid": true
+  },
+  {
+    "symbol": "00792B",
+    "name": "群益美國短期政府債券",
+    "category": "債券",
+    "valid": true
+  },
+  {
+    "symbol": "00793B",
+    "name": "群益美國短期高收益債券",
+    "category": "債券",
+    "valid": true
+  },
+  {
+    "symbol": "00794B",
+    "name": "群益美國政府債券20年",
+    "category": "債券",
+    "valid": true
+  },
+  {
+    "symbol": "00795B",
+    "name": "群益美國政府債券7-10年",
+    "category": "債券",
+    "valid": true
+  },
+  {
+    "symbol": "00796B",
+    "name": "群益美國政府債券1-3年",
+    "category": "債券",
+    "valid": true
+  },
+  {
+    "symbol": "00797B",
+    "name": "群益A級公司債",
+    "category": "債券",
+    "valid": true
+  },
+  {
+    "symbol": "00798B",
+    "name": "群益美國政府債券",
+    "category": "債券",
+    "valid": true
+  },
+  {
+    "symbol": "00799B",
+    "name": "群益美國政府債券3-7年",
+    "category": "債券",
+    "valid": true
   },
   {
     "symbol": "00830",
-    "name": "Cathay PHLX Semiconductor ETF",
-    "valid": true,
-    "price": 41.2599983215332
+    "name": "國泰費城半導體",
+    "category": "國外",
+    "valid": true
+  },
+  {
+    "symbol": "00832",
+    "name": "國泰ChinaAMC中證500",
+    "category": "國外",
+    "valid": true
+  },
+  {
+    "symbol": "00833",
+    "name": "國泰ChinaAMC滬深300",
+    "category": "國外",
+    "valid": true
+  },
+  {
+    "symbol": "00834",
+    "name": "國泰ChinaAMC中證100",
+    "category": "國外",
+    "valid": true
+  },
+  {
+    "symbol": "00835",
+    "name": "國泰ChinaAMC中證紅利",
+    "category": "國外",
+    "valid": true
+  },
+  {
+    "symbol": "00836",
+    "name": "國泰ChinaAMC中證消費",
+    "category": "國外",
+    "valid": true
+  },
+  {
+    "symbol": "00837",
+    "name": "國泰ChinaAMC中證科技",
+    "category": "國外",
+    "valid": true
+  },
+  {
+    "symbol": "00838",
+    "name": "國泰ChinaAMC中證金融",
+    "category": "國外",
+    "valid": true
+  },
+  {
+    "symbol": "00839",
+    "name": "國泰ChinaAMC中證醫療",
+    "category": "國外",
+    "valid": true
+  },
+  {
+    "symbol": "00840",
+    "name": "國泰ChinaAMC中證新能源",
+    "category": "國外",
+    "valid": true
+  },
+  {
+    "symbol": "00841",
+    "name": "國泰ChinaAMC中證半導體",
+    "category": "國外",
+    "valid": true
+  },
+  {
+    "symbol": "00842",
+    "name": "國泰ChinaAMC中證電動車",
+    "category": "國外",
+    "valid": true
+  },
+  {
+    "symbol": "00843",
+    "name": "國泰ChinaAMC中證軍工",
+    "category": "國外",
+    "valid": true
+  },
+  {
+    "symbol": "00844",
+    "name": "國泰ChinaAMC中證5G",
+    "category": "國外",
+    "valid": true
+  },
+  {
+    "symbol": "00845",
+    "name": "富邦越南",
+    "category": "國外",
+    "valid": true
+  },
+  {
+    "symbol": "00846",
+    "name": "元大全球人工智慧",
+    "category": "國外",
+    "valid": true
+  },
+  {
+    "symbol": "00847",
+    "name": "永豐美國500大",
+    "category": "國外",
+    "valid": true
+  },
+  {
+    "symbol": "00848",
+    "name": "元大全球5G",
+    "category": "國外",
+    "valid": true
+  },
+  {
+    "symbol": "00849",
+    "name": "元大全球未來通訊",
+    "category": "國外",
+    "valid": true
   },
   {
     "symbol": "00850",
-    "name": "Yuanta FTSE4Good TIP Taiwan ESG ETF",
-    "valid": true,
-    "price": 43.47999954223633
-  },
-  {
-    "symbol": "00852L",
-    "name": "Cathay DJIA Lev 2X ETF",
-    "valid": true,
-    "price": 24.309999465942383
+    "name": "元大臺灣ESG永續",
+    "category": "市值型",
+    "valid": true
   },
   {
     "symbol": "00851",
-    "name": "Taishin SG Global AI and Robotics Select ETF",
-    "valid": true,
-    "price": 47.4900016784668
+    "name": "元大全球AI",
+    "category": "國外",
+    "valid": true
+  },
+  {
+    "symbol": "00852",
+    "name": "中信中國50",
+    "category": "國外",
+    "valid": true
+  },
+  {
+    "symbol": "00853",
+    "name": "群益全球關鍵生技",
+    "category": "國外",
+    "valid": true
+  },
+  {
+    "symbol": "00854",
+    "name": "國泰全球品牌50",
+    "category": "國外",
+    "valid": true
+  },
+  {
+    "symbol": "00855",
+    "name": "國泰富時中國A50",
+    "category": "國外",
+    "valid": true
+  },
+  {
+    "symbol": "00856",
+    "name": "國泰全球智能電動車",
+    "category": "國外",
+    "valid": true
+  },
+  {
+    "symbol": "00857",
+    "name": "統一全球新科技",
+    "category": "國外",
+    "valid": true
+  },
+  {
+    "symbol": "00858",
+    "name": "富邦全球ESG綠色電力",
+    "category": "國外",
+    "valid": true
+  },
+  {
+    "symbol": "00859",
+    "name": "永豐全球優質龍頭",
+    "category": "國外",
+    "valid": true
+  },
+  {
+    "symbol": "00860",
+    "name": "元大全球未來關鍵科技",
+    "category": "國外",
+    "valid": true
   },
   {
     "symbol": "00861",
-    "name": "Yuanta Global NextGen Communications ETF",
-    "valid": true,
-    "price": 42.25
+    "name": "元大全球未來通訊",
+    "category": "國外",
+    "valid": true
+  },
+  {
+    "symbol": "00862",
+    "name": "中信中國高股息",
+    "category": "國外",
+    "valid": true
+  },
+  {
+    "symbol": "00863",
+    "name": "群益全球半導體收益",
+    "category": "國外",
+    "valid": true
+  },
+  {
+    "symbol": "00864",
+    "name": "元大全球5G+",
+    "category": "國外",
+    "valid": true
   },
   {
     "symbol": "00865B",
-    "name": "Cathay US Short Term Treasury ETF",
-    "valid": true,
-    "price": 43.290000915527344
-  },
-  {
-    "symbol": "00876",
-    "name": "Yuanta Global 5G & NexGen Telecommunication Components ETF",
-    "valid": true,
-    "price": 35.939998626708984
+    "name": "國泰US短期公債",
+    "category": "債券",
+    "valid": true
   },
   {
     "symbol": "00875",
-    "name": "Cathay Cyber Security ETF",
-    "valid": true,
-    "price": 37.4900016784668
+    "name": "國泰網路資安",
+    "category": "國外",
+    "valid": true
+  },
+  {
+    "symbol": "00876",
+    "name": "元大全球5G",
+    "category": "國外",
+    "valid": true
   },
   {
     "symbol": "00878",
-    "name": "Cathay Sustainability High Dividend ETF",
-    "valid": true,
-    "price": 20.959999084472656
+    "name": "國泰永續高股息",
+    "category": "高股息",
+    "valid": true
   },
   {
     "symbol": "00881",
-    "name": "Cathay Taiwan Technology Leader ETF",
-    "valid": true,
-    "price": 23.690000534057617
+    "name": "國泰台灣5G+",
+    "category": "科技",
+    "valid": true
+  },
+  {
+    "symbol": "00882",
+    "name": "中信中國高股息",
+    "category": "國外",
+    "valid": true
+  },
+  {
+    "symbol": "00883",
+    "name": "中信全球電動車及車用電池",
+    "category": "國外",
+    "valid": true
   },
   {
     "symbol": "00885",
-    "name": "Fubon FTSE Vietnam ETF",
-    "valid": true,
-    "price": 12.199999809265137
+    "name": "富邦越南",
+    "category": "國外",
+    "valid": true
+  },
+  {
+    "symbol": "00886",
+    "name": "兆豐全球半導體",
+    "category": "國外",
+    "valid": true
+  },
+  {
+    "symbol": "00887",
+    "name": "國泰全球智能電動車",
+    "category": "國外",
+    "valid": true
+  },
+  {
+    "symbol": "00888",
+    "name": "永豐全球不動產",
+    "category": "國外",
+    "valid": true
+  },
+  {
+    "symbol": "00889",
+    "name": "復華全球原物料",
+    "category": "國外",
+    "valid": true
+  },
+  {
+    "symbol": "00891",
+    "name": "中信關鍵半導體",
+    "category": "科技",
+    "valid": true
+  },
+  {
+    "symbol": "00892",
+    "name": "富邦台灣半導體",
+    "category": "科技",
+    "valid": true
+  },
+  {
+    "symbol": "00893",
+    "name": "國泰智能電動車",
+    "category": "國外",
+    "valid": true
+  },
+  {
+    "symbol": "00894",
+    "name": "中信小資高價30",
+    "category": "國外",
+    "valid": true
+  },
+  {
+    "symbol": "00895",
+    "name": "富邦未來車",
+    "category": "國外",
+    "valid": true
+  },
+  {
+    "symbol": "00896",
+    "name": "中信綠能及電動車",
+    "category": "科技",
+    "valid": true
+  },
+  {
+    "symbol": "00896",
+    "name": "中信綠能及電動車",
+    "category": "國外",
+    "valid": true
+  },
+  {
+    "symbol": "00897",
+    "name": "群益全球清潔能源",
+    "category": "國外",
+    "valid": true
+  },
+  {
+    "symbol": "00898",
+    "name": "中信全球ESG永續",
+    "category": "國外",
+    "valid": true
+  },
+  {
+    "symbol": "00899",
+    "name": "群益全球戰略新興市場",
+    "category": "國外",
+    "valid": true
+  },
+  {
+    "symbol": "00900",
+    "name": "富邦特選高股息30",
+    "category": "高股息",
+    "valid": true
+  },
+  {
+    "symbol": "00901",
+    "name": "永豐全球ESG數位基建",
+    "category": "國外",
+    "valid": true
+  },
+  {
+    "symbol": "00902",
+    "name": "中信全球ESG永續",
+    "category": "國外",
+    "valid": true
+  },
+  {
+    "symbol": "00903",
+    "name": "群益全球ESG高收益債",
+    "category": "國外",
+    "valid": true
+  },
+  {
+    "symbol": "00904",
+    "name": "新光臺灣半導體30",
+    "category": "科技",
+    "valid": true
+  },
+  {
+    "symbol": "00905",
+    "name": "富邦全球ESG綠色電力",
+    "category": "國外",
+    "valid": true
+  },
+  {
+    "symbol": "00906",
+    "name": "中信全球ESG永續",
+    "category": "國外",
+    "valid": true
+  },
+  {
+    "symbol": "00907",
+    "name": "永豐優息存股",
+    "category": "高股息",
+    "valid": true
+  },
+  {
+    "symbol": "00908",
+    "name": "富邦全球ESG綠色電力",
+    "category": "國外",
+    "valid": true
+  },
+  {
+    "symbol": "00909",
+    "name": "群益全球ESG高收益債",
+    "category": "國外",
+    "valid": true
+  },
+  {
+    "symbol": "00910",
+    "name": "群益全球ESG高收益債",
+    "category": "國外",
+    "valid": true
+  },
+  {
+    "symbol": "00911",
+    "name": "兆豐全球ESG永續",
+    "category": "國外",
+    "valid": true
+  },
+  {
+    "symbol": "00912",
+    "name": "中信全球ESG永續",
+    "category": "國外",
+    "valid": true
+  },
+  {
+    "symbol": "00913",
+    "name": "兆豐全球ESG永續",
+    "category": "國外",
+    "valid": true
+  },
+  {
+    "symbol": "00914",
+    "name": "中信全球ESG永續",
+    "category": "國外",
+    "valid": true
+  },
+  {
+    "symbol": "00915",
+    "name": "凱基優選高股息30",
+    "category": "高股息",
+    "valid": true
+  },
+  {
+    "symbol": "00916",
+    "name": "群益全球ESG高收益債",
+    "category": "國外",
+    "valid": true
+  },
+  {
+    "symbol": "00917",
+    "name": "群益全球ESG高收益債",
+    "category": "國外",
+    "valid": true
+  },
+  {
+    "symbol": "00918",
+    "name": "大華優利高填息30",
+    "category": "高股息",
+    "valid": true
   },
   {
     "symbol": "00919",
-    "name": "Capital Tip Customized Taiwan Select High Dividend ETF",
-    "valid": true,
-    "price": 21.530000686645508
+    "name": "群益台灣精選高息",
+    "category": "高股息",
+    "valid": true
   },
   {
-    "symbol": "00923",
-    "name": "Capital Tip Customized Taiwan ESG Low Carbon 50 ETF",
-    "valid": true,
-    "price": 21.059999465942383
-  },
-  {
-    "symbol": "00924",
-    "name": "Fuh Hwa US S&P 500 Growth ETF",
-    "valid": true,
-    "price": 23.760000228881836
-  },
-  {
-    "symbol": "00926",
-    "name": "Kgi Securities Investment Trust Co. Ltd. - Global Industry Elite 55 Etf",
-    "valid": true,
-    "price": 20.1299991607666
-  },
-  {
-    "symbol": "00929",
-    "name": "Fuh Hwa Taiwan Technology Dividend Highlight ETF",
-    "valid": true,
-    "price": 17.540000915527344
+    "symbol": "00920",
+    "name": "富邦全球ESG綠色電力",
+    "category": "國外",
+    "valid": true
   },
   {
     "symbol": "00921",
-    "name": "Mega Taiwan Market Leader Dividend Equal Weight ETF",
-    "valid": true,
-    "price": 16.56999969482422
+    "name": "兆豐全球ESG永續",
+    "category": "國外",
+    "valid": true
+  },
+  {
+    "symbol": "00922",
+    "name": "國泰台灣領袖50",
+    "category": "市值型",
+    "valid": true
+  },
+  {
+    "symbol": "00923",
+    "name": "群益台ESG低碳",
+    "category": "市值型",
+    "valid": true
+  },
+  {
+    "symbol": "00924",
+    "name": "群益台灣精選高息",
+    "category": "市值型",
+    "valid": true
+  },
+  {
+    "symbol": "00925",
+    "name": "群益全球ESG高收益債",
+    "category": "國外",
+    "valid": true
+  },
+  {
+    "symbol": "00926",
+    "name": "群益全球ESG高收益債",
+    "category": "國外",
+    "valid": true
+  },
+  {
+    "symbol": "00927",
+    "name": "群益半導體收益",
+    "category": "市值型",
+    "valid": true
+  },
+  {
+    "symbol": "00927",
+    "name": "群益半導體收益",
+    "category": "科技",
+    "valid": true
+  },
+  {
+    "symbol": "00928",
+    "name": "中信全球ESG永續",
+    "category": "國外",
+    "valid": true
+  },
+  {
+    "symbol": "00929",
+    "name": "復華台灣科技優息",
+    "category": "市值型",
+    "valid": true
+  },
+  {
+    "symbol": "00929",
+    "name": "復華台灣科技優息",
+    "category": "高股息",
+    "valid": true
+  },
+  {
+    "symbol": "00929",
+    "name": "復華台灣科技優息",
+    "category": "科技",
+    "valid": true
   },
   {
     "symbol": "00930",
-    "name": "Sinopac Secs Inv TR Co LTD-TAIWAN Esg Low Carbon High Dividend Etf",
-    "valid": true,
-    "price": 17.049999237060547
+    "name": "永豐ESG低碳高息",
+    "category": "高股息",
+    "valid": true
+  },
+  {
+    "symbol": "00931",
+    "name": "群益全球ESG高收益債",
+    "category": "國外",
+    "valid": true
+  },
+  {
+    "symbol": "00932",
+    "name": "兆豐永續高息等權",
+    "category": "高股息",
+    "valid": true
+  },
+  {
+    "symbol": "00933",
+    "name": "群益全球ESG高收益債",
+    "category": "國外",
+    "valid": true
+  },
+  {
+    "symbol": "00934",
+    "name": "中信成長高股息",
+    "category": "市值型",
+    "valid": true
+  },
+  {
+    "symbol": "00934",
+    "name": "中信成長高股息",
+    "category": "高股息",
+    "valid": true
+  },
+  {
+    "symbol": "00935",
+    "name": "野村臺灣新科技50",
+    "category": "高股息",
+    "valid": true
+  },
+  {
+    "symbol": "00936",
+    "name": "台新永續高息中小",
+    "category": "市值型",
+    "valid": true
+  },
+  {
+    "symbol": "00936",
+    "name": "台新永續高息中小",
+    "category": "高股息",
+    "valid": true
+  },
+  {
+    "symbol": "00936",
+    "name": "台新永續高息中小",
+    "category": "中小型",
+    "valid": true
+  },
+  {
+    "symbol": "00937",
+    "name": "群益全球ESG高收益債",
+    "category": "國外",
+    "valid": true
+  },
+  {
+    "symbol": "00938",
+    "name": "群益全球ESG高收益債",
+    "category": "國外",
+    "valid": true
+  },
+  {
+    "symbol": "00939",
+    "name": "統一台灣高息動能",
+    "category": "高股息",
+    "valid": true
+  },
+  {
+    "symbol": "00940",
+    "name": "元大台灣價值高息",
+    "category": "市值型",
+    "valid": true
+  },
+  {
+    "symbol": "00940",
+    "name": "元大台灣價值高息",
+    "category": "高股息",
+    "valid": true
+  },
+  {
+    "symbol": "00941",
+    "name": "中信優選金融",
+    "category": "高股息",
+    "valid": true
+  },
+  {
+    "symbol": "00941",
+    "name": "中信優選金融",
+    "category": "金融",
+    "valid": true
+  },
+  {
+    "symbol": "00942",
+    "name": "群益全球ESG高收益債",
+    "category": "國外",
+    "valid": true
+  },
+  {
+    "symbol": "00943",
+    "name": "群益台灣半導體收益",
+    "category": "市值型",
+    "valid": true
+  },
+  {
+    "symbol": "00943",
+    "name": "群益台灣半導體收益",
+    "category": "高股息",
+    "valid": true
+  },
+  {
+    "symbol": "00943",
+    "name": "群益台灣半導體收益",
+    "category": "科技",
+    "valid": true
+  },
+  {
+    "symbol": "00944",
+    "name": "群益全球ESG高收益債",
+    "category": "國外",
+    "valid": true
+  },
+  {
+    "symbol": "00945",
+    "name": "群益全球ESG高收益債",
+    "category": "國外",
+    "valid": true
   }
 ]
