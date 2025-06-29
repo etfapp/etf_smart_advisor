@@ -60,9 +60,6 @@ function App() {
       
       if (response.ok) {
         const data = await response.json()
-        console.log('API Response:', data) // 添加調試日誌
-        console.log('Positions:', data.positions) // 檢查 positions 數據
-        console.log('Risk Alerts:', data.risk_alerts) // 檢查風險警示數據
         setRecommendation(data)
       } else {
         setError('API 請求失敗，請稍後再試')
