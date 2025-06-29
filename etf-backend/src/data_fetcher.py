@@ -261,3 +261,35 @@ class DataFetcher:
             logger.warning(f"無法獲取 {symbol} 的基本資訊: {e}")
             return None
 
+
+
+    def get_market_data(self) -> Dict:
+        """獲取市場數據 (VIX, 加權指數RSI, 經濟指標)"""
+        cache_key = "market_data"
+        if self._is_cache_valid(cache_key):
+            return self._get_from_cache(cache_key)
+
+        try:
+            # 模擬獲取 VIX 數據 (實際應從可靠來源獲取)
+            vix = np.random.uniform(15, 35) # 假設 VIX 在 15 到 35 之間波動
+
+            # 模擬獲取加權指數 RSI (實際應從可靠來源獲取)
+            taiex_rsi = np.random.uniform(30, 70) # 假設 RSI 在 30 到 70 之間波動
+
+            # 模擬獲取經濟指標 (綠燈/黃燈/紅燈)
+            economic_indicators = ["綠燈", "黃燈", "紅燈"]
+            economic_indicator = np.random.choice(economic_indicators)
+
+            market_data = {
+                "vix": float(vix),
+                "taiex_rsi": float(taiex_rsi),
+                "economic_indicator": economic_indicator
+            }
+            self._set_cache(cache_key, market_data)
+            return market_data
+        except Exception as e:
+            logger.error(f"獲取市場數據失敗: {e}")
+            # 返回預設值或空數據，避免服務中斷
+            return {"vix": 20.0, "taiex_rsi": 50.0, "economic_indicator": "黃燈"}
+
+
