@@ -1,0 +1,656 @@
+[
+  {
+    "symbol": "0050",
+    "name": "Yuanta/P-shares Taiwan Top 50 ETF",
+    "valid": true,
+    "price": 48.18000030517578
+  },
+  {
+    "symbol": "006204",
+    "name": "Sinopac TAIEX ETF",
+    "valid": true,
+    "price": 113.55000305175781
+  },
+  {
+    "symbol": "006203",
+    "name": "Yuanta/P-shares MSCI Taiwan ETF",
+    "valid": true,
+    "price": 88.5999984741211
+  },
+  {
+    "symbol": "0056",
+    "name": "Yuanta/P-shares Taiwan Dividend Plus ETF",
+    "valid": true,
+    "price": 34.61000061035156
+  },
+  {
+    "symbol": "0053",
+    "name": "Yuanta/P-shares Taiwan Electronics Tech ETF",
+    "valid": true,
+    "price": 102.69999694824219
+  },
+  {
+    "symbol": "0051",
+    "name": "Yuanta/P-shares Taiwan Mid-Cap 100 ETF",
+    "valid": true,
+    "price": 74.25
+  },
+  {
+    "symbol": "006205",
+    "name": "Fubon SSE180 ETF",
+    "valid": true,
+    "price": 30.75
+  },
+  {
+    "symbol": "0055",
+    "name": "Yuanta/P-shares MSCI Taiwan Financials ETF",
+    "valid": true,
+    "price": 28.860000610351562
+  },
+  {
+    "symbol": "0052",
+    "name": "Fubon Taiwan Technology Tracker Fund",
+    "valid": true,
+    "price": 187.10000610351562
+  },
+  {
+    "symbol": "006208",
+    "name": "Fubon FTSE TWSE Taiwan 50 ETF",
+    "valid": true,
+    "price": 112.94999694824219
+  },
+  {
+    "symbol": "006206",
+    "name": "Yuanta/P-shares SSE50 ETF",
+    "valid": true,
+    "price": 29.81999969482422
+  },
+  {
+    "symbol": "006207",
+    "name": "Fuh Hwa CSI 300 A Shares Exchange Traded Fund",
+    "valid": true,
+    "price": 23.329999923706055
+  },
+  {
+    "symbol": "0061",
+    "name": "W.I.S.E. Yuanta/P-shares CSI 300 ETF",
+    "valid": true,
+    "price": 17.81999969482422
+  },
+  {
+    "symbol": "0057",
+    "name": "Fubon MSCI Taiwan ETF",
+    "valid": true,
+    "price": 142.1999969482422
+  },
+  {
+    "symbol": "00631L",
+    "name": "Yuanta Daily Taiwan 50 Bull 2X ETF",
+    "valid": true,
+    "price": 213.75
+  },
+  {
+    "symbol": "00633L",
+    "name": "Fubon SSE180 Leveraged 2X Index ETF",
+    "valid": true,
+    "price": 37.959999084472656
+  },
+  {
+    "symbol": "00632R",
+    "name": "Yuanta Daily Taiwan 50 Bear -1X ETF",
+    "valid": true,
+    "price": 22.030000686645508
+  },
+  {
+    "symbol": "00640L",
+    "name": "Fubon TOPIX Leveraged 2X Index ETF",
+    "valid": true,
+    "price": 51.54999923706055
+  },
+  {
+    "symbol": "00634R",
+    "name": "Fubon SSE180 Inversed Index ETF",
+    "valid": true,
+    "price": 3.7100000381469727
+  },
+  {
+    "symbol": "00638R",
+    "name": "Yuanta/P-Shrs CSI 300 1X ETF",
+    "valid": true,
+    "price": 7.690000057220459
+  },
+  {
+    "symbol": "00637L",
+    "name": "Yuanta/P-Shrs CSI 300 2X ETF",
+    "valid": true,
+    "price": 15.100000381469727
+  },
+  {
+    "symbol": "00636",
+    "name": "Cathay FTSE China A50 ETF",
+    "valid": true,
+    "price": 21.56999969482422
+  },
+  {
+    "symbol": "00641R",
+    "name": "Fubon TOPIX Inverse -1X Index ETF",
+    "valid": true,
+    "price": 5.730000019073486
+  },
+  {
+    "symbol": "00642U",
+    "name": "Yuanta S&P GSCI Crude Oil ER Futures ETF",
+    "valid": true,
+    "price": 16.059999465942383
+  },
+  {
+    "symbol": "00646",
+    "name": "Yuanta S&P 500 ETF",
+    "valid": true,
+    "price": 56.04999923706055
+  },
+  {
+    "symbol": "00647L",
+    "name": "Yuanta Daily S&P 500 Bull 2X ETF",
+    "valid": true,
+    "price": 92.5
+  },
+  {
+    "symbol": "00650L",
+    "name": "Fuh Hwa Daily Hang Seng Leveraged 2X ETF",
+    "valid": true,
+    "price": 15.289999961853027
+  },
+  {
+    "symbol": "00652",
+    "name": "Fubon NIFTY ETF",
+    "valid": true,
+    "price": 35.95000076293945
+  },
+  {
+    "symbol": "00648R",
+    "name": "Yuanta Daily S&P 500 Bear 1X ETF",
+    "valid": true,
+    "price": 4.78000020980835
+  },
+  {
+    "symbol": "00651R",
+    "name": "Fuh Hwa Daily Hang Seng Inversed ETF",
+    "valid": true,
+    "price": 5.679999828338623
+  },
+  {
+    "symbol": "00655L",
+    "name": "Cathay FTSE China A50 Daily Leveraged 2X ETF",
+    "valid": true,
+    "price": 26.34000015258789
+  },
+  {
+    "symbol": "00654R",
+    "name": "Fubon NIFTY -1 Inverse Index ETF",
+    "valid": true,
+    "price": 6.21999979019165
+  },
+  {
+    "symbol": "00656R",
+    "name": "Cathay FTSE China A50 Daily Inversed ETF",
+    "valid": true,
+    "price": 6.809999942779541
+  },
+  {
+    "symbol": "00653L",
+    "name": "Fubon NIFTY 2X Leveraged Index ETF",
+    "valid": true,
+    "price": 57.04999923706055
+  },
+  {
+    "symbol": "00657",
+    "name": "Cathay Nikkei 225 Currency-hedged ETF Fund",
+    "valid": true,
+    "price": 45.52000045776367
+  },
+  {
+    "symbol": "00666R",
+    "name": "Fubon Hang Seng H-Share Inverse Index ETF",
+    "valid": true,
+    "price": 9.069999694824219
+  },
+  {
+    "symbol": "00663L",
+    "name": "Cathay TAIEX Daily Leveraged 2X ETF",
+    "valid": true,
+    "price": 27.889999389648438
+  },
+  {
+    "symbol": "00664R",
+    "name": "Cathay TAIEX Daily Inversed ETF",
+    "valid": true,
+    "price": 3.549999952316284
+  },
+  {
+    "symbol": "00662",
+    "name": "Fubon NASDAQ-100 Index ETF",
+    "valid": true,
+    "price": 83.94999694824219
+  },
+  {
+    "symbol": "00669R",
+    "name": "Cathay DJIA Inv 1X ETF",
+    "valid": true,
+    "price": 6.170000076293945
+  },
+  {
+    "symbol": "00674R",
+    "name": "Yuanta S&P GSCI Gold 1x Inverse ER Futures ETF",
+    "valid": true,
+    "price": 7.590000152587891
+  },
+  {
+    "symbol": "00665L",
+    "name": "Fubon Hang Seng H-Share Leveraged Index ETF",
+    "valid": true,
+    "price": 10.359999656677246
+  },
+  {
+    "symbol": "00671R",
+    "name": "Fubon NASDAQ-100 -1X Inverse Index ETF",
+    "valid": true,
+    "price": 3.25
+  },
+  {
+    "symbol": "00673R",
+    "name": "Yuanta S&P GSCI Crude Oil 1x Inverse ER Futures ETF",
+    "valid": true,
+    "price": 6.699999809265137
+  },
+  {
+    "symbol": "00675L",
+    "name": "Fubon TAIEX Daily 2X Leveraged ETF",
+    "valid": true,
+    "price": 85.0
+  },
+  {
+    "symbol": "00680L",
+    "name": "Yuanta Daily U.S. Treasury 20+ Year Bond Bull 2X ETF",
+    "valid": true,
+    "price": 7.090000152587891
+  },
+  {
+    "symbol": "00676R",
+    "name": "Fubon TAIEX Daily -1X Inverse ETF",
+    "valid": true,
+    "price": 12.0600004196167
+  },
+  {
+    "symbol": "00670L",
+    "name": "Fubon NASDAQ-100 2X Leveraged Index ETF",
+    "valid": true,
+    "price": 131.8000030517578
+  },
+  {
+    "symbol": "00681R",
+    "name": "Yuanta Daily U.S. Treasury 20+ Year Bond Bear 1X ETF",
+    "valid": true,
+    "price": 20.8700008392334
+  },
+  {
+    "symbol": "00682U",
+    "name": "Yuanta S&P US Dollar ER Futures ETF",
+    "valid": true,
+    "price": 19.920000076293945
+  },
+  {
+    "symbol": "00683L",
+    "name": "Yuanta S&P US Dollar 2x Leverage ER Futures ETF",
+    "valid": true,
+    "price": 20.270000457763672
+  },
+  {
+    "symbol": "00685L",
+    "name": "Capital Taiex Daily Leveraged 2X ETF",
+    "valid": true,
+    "price": 76.19999694824219
+  },
+  {
+    "symbol": "00690",
+    "name": "Mega Taiwan Blue Chip 30 ETF",
+    "valid": true,
+    "price": 34.189998626708984
+  },
+  {
+    "symbol": "00686R",
+    "name": "Capital Taiex Daily Inversed -1X ETF",
+    "valid": true,
+    "price": 2.1600000858306885
+  },
+  {
+    "symbol": "00684R",
+    "name": "Yuanta S&P US Dollar 1x Inverse ER Futures ETF",
+    "valid": true,
+    "price": 15.859999656677246
+  },
+  {
+    "symbol": "00688L",
+    "name": "Cathay US Treasury 20+ YR Lev 2X ETF",
+    "valid": true,
+    "price": 7.070000171661377
+  },
+  {
+    "symbol": "00689R",
+    "name": "Cathay US Treasury 20+ YR Inv 1X ETF",
+    "valid": true,
+    "price": 21.329999923706055
+  },
+  {
+    "symbol": "00692",
+    "name": "Fubon TWSE Corporate Governance 100 ETF",
+    "valid": true,
+    "price": 44.380001068115234
+  },
+  {
+    "symbol": "00693U",
+    "name": "JKO S&P GSCI Soybeans ER Futures ETF",
+    "valid": true,
+    "price": 20.1200008392334
+  },
+  {
+    "symbol": "00701",
+    "name": "Cathay TIP TAIEX+ Low Volatility Select 30 ETF",
+    "valid": true,
+    "price": 28.0
+  },
+  {
+    "symbol": "00702",
+    "name": "Cathay S&P 500 Low Volatility High Dividend ETF",
+    "valid": true,
+    "price": 21.920000076293945
+  },
+  {
+    "symbol": "00700",
+    "name": "Fubon Hang Seng China Enterprises ETF",
+    "valid": true,
+    "price": 16.799999237060547
+  },
+  {
+    "symbol": "00703",
+    "name": "Taishin MSCI China ETF",
+    "valid": true,
+    "price": 18.559999465942383
+  },
+  {
+    "symbol": "00709",
+    "name": "Fubon FTSE Developed Europe ETF",
+    "valid": true,
+    "price": 31.280000686645508
+  },
+  {
+    "symbol": "00706L",
+    "name": "Yuanta S&P Japanese Yen 2x Leverage ER Futures ETF",
+    "valid": true,
+    "price": 6.190000057220459
+  },
+  {
+    "symbol": "00708L",
+    "name": "Yuanta S&P GSCI Gold 2X Leveraged ER Futures ETF",
+    "valid": true,
+    "price": 57.0
+  },
+  {
+    "symbol": "00715L",
+    "name": "JKO S&P GSCI Brent Crude 2X Leveraged ER Futures ETF",
+    "valid": true,
+    "price": 10.699999809265137
+  },
+  {
+    "symbol": "00714",
+    "name": "Capital Dow Jones U.S. Real Estate Index ETF",
+    "valid": true,
+    "price": 19.40999984741211
+  },
+  {
+    "symbol": "00711B",
+    "name": "Fuh Hwa Emerging Market 10+ Yr Bond ETF",
+    "valid": true,
+    "price": 14.539999961853027
+  },
+  {
+    "symbol": "00713",
+    "name": "Yuanta Taiwan High Dividend Low Volatility ETF",
+    "valid": true,
+    "price": 50.29999923706055
+  },
+  {
+    "symbol": "00712",
+    "name": "Fuh Hwa FTSE Mortgage REITs ETF",
+    "valid": true,
+    "price": 8.199999809265137
+  },
+  {
+    "symbol": "00710B",
+    "name": "Fuh Hwa 1-5 Yr High Yield ETF",
+    "valid": true,
+    "price": 17.84000015258789
+  },
+  {
+    "symbol": "00707R",
+    "name": "Yuanta S&P Japanese Yen 1x Inverse ER Futures ETF",
+    "valid": true,
+    "price": 28.299999237060547
+  },
+  {
+    "symbol": "00717",
+    "name": "Fubon S&P US Preferred Stock ETF",
+    "valid": true,
+    "price": 13.850000381469727
+  },
+  {
+    "symbol": "00730",
+    "name": "Fubon Dow Jones Taiwan High-Quality Dividend 30 ETF",
+    "valid": true,
+    "price": 22.040000915527344
+  },
+  {
+    "symbol": "00731",
+    "name": "Fuh Hwa FTSE Taiwan High Div Low Vol ETF",
+    "valid": true,
+    "price": 66.05000305175781
+  },
+  {
+    "symbol": "00728",
+    "name": "FSITC Taiwan Industry Elite 30 ETF",
+    "valid": true,
+    "price": 30.229999542236328
+  },
+  {
+    "symbol": "00733",
+    "name": "Fubon Taiwan Small-Mid Cap Alpha Momentum 50 ETF",
+    "valid": true,
+    "price": 38.79999923706055
+  },
+  {
+    "symbol": "00736",
+    "name": "Cathay FTSE Emerging Markets ETF",
+    "valid": true,
+    "price": 23.709999084472656
+  },
+  {
+    "symbol": "00735",
+    "name": "Cathay Korea/Taiwan IT Premier ETF",
+    "valid": true,
+    "price": 34.29999923706055
+  },
+  {
+    "symbol": "00737",
+    "name": "Cathay Nasdaq CTA Artificial Intelligence and Robotics ETF",
+    "valid": true,
+    "price": 30.25
+  },
+  {
+    "symbol": "00738U",
+    "name": "Yuanta DJCI Silver ER Futures ETF",
+    "valid": true,
+    "price": 30.309999465942383
+  },
+  {
+    "symbol": "00739",
+    "name": "Yuanta MSCI China A ETF",
+    "valid": true,
+    "price": 21.0
+  },
+  {
+    "symbol": "00753L",
+    "name": "CTBC China 50 2X",
+    "valid": true,
+    "price": 10.050000190734863
+  },
+  {
+    "symbol": "00752",
+    "name": "CTBC China 50",
+    "valid": true,
+    "price": 22.6200008392334
+  },
+  {
+    "symbol": "00757",
+    "name": "UPAMC NYSE FANG+ ETF",
+    "valid": true,
+    "price": 100.44999694824219
+  },
+  {
+    "symbol": "00763U",
+    "name": "JKO Dow Jones Copper ER Futures ETF",
+    "valid": true,
+    "price": 27.690000534057617
+  },
+  {
+    "symbol": "00762",
+    "name": "Yuanta STOXX Global Artificial Intelligence ETF",
+    "valid": true,
+    "price": 67.1500015258789
+  },
+  {
+    "symbol": "00770",
+    "name": "Cathay S&P North Amrcn Tchnlgy Sctr ETF",
+    "valid": true,
+    "price": 44.939998626708984
+  },
+  {
+    "symbol": "00771",
+    "name": "Yuanta S&P U.S. High Yield Preferred Stock ETF",
+    "valid": true,
+    "price": 15.140000343322754
+  },
+  {
+    "symbol": "00783",
+    "name": "Fubon China CSI 500 Index ETF",
+    "valid": true,
+    "price": 18.290000915527344
+  },
+  {
+    "symbol": "00830",
+    "name": "Cathay PHLX Semiconductor ETF",
+    "valid": true,
+    "price": 41.2599983215332
+  },
+  {
+    "symbol": "00850",
+    "name": "Yuanta FTSE4Good TIP Taiwan ESG ETF",
+    "valid": true,
+    "price": 43.47999954223633
+  },
+  {
+    "symbol": "00852L",
+    "name": "Cathay DJIA Lev 2X ETF",
+    "valid": true,
+    "price": 24.309999465942383
+  },
+  {
+    "symbol": "00851",
+    "name": "Taishin SG Global AI and Robotics Select ETF",
+    "valid": true,
+    "price": 47.4900016784668
+  },
+  {
+    "symbol": "00861",
+    "name": "Yuanta Global NextGen Communications ETF",
+    "valid": true,
+    "price": 42.25
+  },
+  {
+    "symbol": "00865B",
+    "name": "Cathay US Short Term Treasury ETF",
+    "valid": true,
+    "price": 43.290000915527344
+  },
+  {
+    "symbol": "00876",
+    "name": "Yuanta Global 5G & NexGen Telecommunication Components ETF",
+    "valid": true,
+    "price": 35.939998626708984
+  },
+  {
+    "symbol": "00875",
+    "name": "Cathay Cyber Security ETF",
+    "valid": true,
+    "price": 37.4900016784668
+  },
+  {
+    "symbol": "00878",
+    "name": "Cathay Sustainability High Dividend ETF",
+    "valid": true,
+    "price": 20.959999084472656
+  },
+  {
+    "symbol": "00881",
+    "name": "Cathay Taiwan Technology Leader ETF",
+    "valid": true,
+    "price": 23.690000534057617
+  },
+  {
+    "symbol": "00885",
+    "name": "Fubon FTSE Vietnam ETF",
+    "valid": true,
+    "price": 12.199999809265137
+  },
+  {
+    "symbol": "00919",
+    "name": "Capital Tip Customized Taiwan Select High Dividend ETF",
+    "valid": true,
+    "price": 21.530000686645508
+  },
+  {
+    "symbol": "00923",
+    "name": "Capital Tip Customized Taiwan ESG Low Carbon 50 ETF",
+    "valid": true,
+    "price": 21.059999465942383
+  },
+  {
+    "symbol": "00924",
+    "name": "Fuh Hwa US S&P 500 Growth ETF",
+    "valid": true,
+    "price": 23.760000228881836
+  },
+  {
+    "symbol": "00926",
+    "name": "Kgi Securities Investment Trust Co. Ltd. - Global Industry Elite 55 Etf",
+    "valid": true,
+    "price": 20.1299991607666
+  },
+  {
+    "symbol": "00929",
+    "name": "Fuh Hwa Taiwan Technology Dividend Highlight ETF",
+    "valid": true,
+    "price": 17.540000915527344
+  },
+  {
+    "symbol": "00921",
+    "name": "Mega Taiwan Market Leader Dividend Equal Weight ETF",
+    "valid": true,
+    "price": 16.56999969482422
+  },
+  {
+    "symbol": "00930",
+    "name": "Sinopac Secs Inv TR Co LTD-TAIWAN Esg Low Carbon High Dividend Etf",
+    "valid": true,
+    "price": 17.049999237060547
+  }
+]

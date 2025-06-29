@@ -102,18 +102,23 @@ def get_etf_list():
         import json
         import os
         
-        # 讀取 ETF 清單文件
+        # 讀取驗證過的 ETF 清單文件
         current_dir = os.path.dirname(os.path.abspath(__file__))
-        etf_list_path = os.path.join(current_dir, 'etf_list.json')
+        etf_list_path = os.path.join(current_dir, 'verified_etf_list.json')
         
         with open(etf_list_path, 'r', encoding='utf-8') as f:
             etf_list = json.load(f)
         
-        return jsonify({
-            'success': True,
-            'data': etf_list,
-            'count': len(etf_list)
-        })
+        # 轉換格式以符合前端期望
+        formatted_etf_list = []
+        for etf in etf_list:
+            formatted_etf_list.append({
+                'symbol': etf['symbol'],
+                'name': etf['name'],
+                'valid': etf.get('valid', True)
+            })
+        
+        return jsonify(formatted_etf_list)
         
     except Exception as e:
         logger.error(f"獲取 ETF 清單錯誤: {e}")
@@ -126,20 +131,23 @@ def get_etf_list():
 def health_check():
     """健康檢查"""
     try:
-        # 簡單的健康檢查
-        market_data = data_fetcher.get_market_data() # 嘗試獲取數據以檢查數據源連線
+        # 簡單的健康檢查 - 檢查ETF清單是否可用
+        etf_list = data_fetcher.get_taiwan_etf_list()
         return jsonify({
             'status': 'healthy',
-            'timestamp': market_data.get('updated_at'),
-            'service': 'ETF Smart Advisor API'
+            'etf_count': len(etf_list),
+            'timestamp': time.time()
         })
-        
     except Exception as e:
         logger.error(f"健康檢查失敗: {e}")
         return jsonify({
             'status': 'unhealthy',
             'error': str(e)
         }), 500
+
+@app.route('/api/custom-recommendation', methods=['POST'])
+def custom_recommendation():
+    """自訂投資建議"""
 
 # 靜態文件服務 (用於前端部署)
 @app.route('/', defaults={'path': ''}) # 確保根路徑也能被處理
