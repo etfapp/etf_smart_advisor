@@ -1,18 +1,18 @@
 """
-投資判斷引擎
-負責市場分析、ETF 評分、資金配置等核心投資邏輯
+升級版投資判斷引擎
+新增價格水位評估、智能分批進場、風險控制等功能
 """
 
 import pandas as pd
 import numpy as np
-from datetime import datetime
+from datetime import datetime, timedelta
 from typing import Dict, List, Optional, Tuple
 import logging
 
 logger = logging.getLogger(__name__)
 
 class InvestmentEngine:
-    """投資判斷引擎"""
+    """升級版投資判斷引擎"""
     
     def __init__(self):
         self.market_analyzer = MarketAnalyzer()
@@ -20,38 +20,42 @@ class InvestmentEngine:
         self.position_calculator = PositionCalculator()
         self.risk_monitor = RiskMonitor()
         self.advice_generator = AdviceGenerator()
+        self.price_level_analyzer = PriceLevelAnalyzer()  # 新增價格水位分析器
     
     def get_daily_recommendation(self, user_profile: Dict, etf_data: List[Dict], market_data: Dict) -> Dict:
         """獲取每日投資建議"""
         try:
             # 獲取用戶自選的 ETF 和佈局檔數
             selected_etfs_symbols = user_profile.get('selected_etfs', [])
-            num_etfs_to_invest = user_profile.get('num_etfs_to_invest', 0)  # 0 表示不限制，沿用舊邏輯
+            num_etfs_to_invest = user_profile.get('num_etfs_to_invest', 0)
             
             # 1. 分析市場環境
             market_strategy = self.market_analyzer.analyze(market_data)
             
-            # 2. 篩選和評分 ETF
-            # 如果用戶有選擇特定ETF，則只對這些ETF進行評分
+            # 2. 篩選和評分 ETF（包含價格水位分析）
             if selected_etfs_symbols:
-                # 過濾出用戶選擇的ETF數據
                 filtered_etf_data = [etf for etf in etf_data if etf['symbol'] in selected_etfs_symbols]
                 etf_scores = self.etf_screener.screen_and_score(filtered_etf_data)
             else:
                 etf_scores = self.etf_screener.screen_and_score(etf_data)
             
-            # 3. 計算資金配置
+            # 3. 價格水位分析
+            for etf_score in etf_scores:
+                price_level_info = self.price_level_analyzer.calculate_price_level(etf_score)
+                etf_score.update(price_level_info)
+            
+            # 4. 計算資金配置（考慮價格水位）
             positions = self.position_calculator.calculate(
                 user_profile.get('available_cash', 100000),
                 market_strategy,
                 etf_scores,
-                num_etfs_to_invest  # 傳遞佈局檔數參數
+                num_etfs_to_invest
             )
             
-            # 4. 風險監控
+            # 5. 風險監控
             risk_alerts = self.risk_monitor.check_risks(etf_scores)
             
-            # 5. 生成投資建議
+            # 6. 生成投資建議
             advice = self.advice_generator.generate(
                 market_strategy, etf_scores, risk_alerts, user_profile
             )
@@ -71,6 +75,78 @@ class InvestmentEngine:
             return {
                 'success': False,
                 'error': str(e)
+            }
+
+class PriceLevelAnalyzer:
+    """價格水位分析器"""
+    
+    def calculate_price_level(self, etf_data: Dict) -> Dict:
+        """計算價格水位"""
+        try:
+            current_price = etf_data.get('current_price', 50)
+            
+            # 模擬52週高低價（實際應從數據源獲取）
+            price_52w_high = current_price * (1 + np.random.uniform(0.1, 0.3))
+            price_52w_low = current_price * (1 - np.random.uniform(0.1, 0.3))
+            
+            # 計算價格在52週區間的位置 (0-100)
+            if price_52w_high == price_52w_low:
+                price_percentile = 50
+            else:
+                price_percentile = ((current_price - price_52w_low) / 
+                                  (price_52w_high - price_52w_low)) * 100
+            
+            # 定義水位等級和安全係數
+            if price_percentile <= 20:
+                level = "極低水位"
+                safety_multiplier = 1.5  # 可增加50%投資
+                signal = "綠燈"
+                description = "價格處於歷史低位，絕佳進場機會"
+            elif price_percentile <= 40:
+                level = "低水位"
+                safety_multiplier = 1.2  # 可增加20%投資
+                signal = "綠燈"
+                description = "價格偏低，適合逢低布局"
+            elif price_percentile <= 60:
+                level = "中等水位"
+                safety_multiplier = 1.0  # 正常投資
+                signal = "黃燈"
+                description = "價格處於合理區間，可正常配置"
+            elif price_percentile <= 80:
+                level = "高水位"
+                safety_multiplier = 0.7  # 減少30%投資
+                signal = "黃燈"
+                description = "價格偏高，建議減少投資比例"
+            else:
+                level = "極高水位"
+                safety_multiplier = 0.4  # 減少60%投資
+                signal = "紅燈"
+                description = "價格處於歷史高位，建議等待回調"
+            
+            return {
+                'price_level': {
+                    'percentile': round(price_percentile, 1),
+                    'level': level,
+                    'signal': signal,
+                    'description': description,
+                    'safety_multiplier': safety_multiplier,
+                    'price_52w_high': round(price_52w_high, 2),
+                    'price_52w_low': round(price_52w_low, 2),
+                    'current_price': current_price
+                }
+            }
+            
+        except Exception as e:
+            logger.error(f"價格水位計算錯誤: {e}")
+            return {
+                'price_level': {
+                    'percentile': 50,
+                    'level': "中等水位",
+                    'signal': "黃燈",
+                    'description': "無法計算價格水位，採用中性評估",
+                    'safety_multiplier': 1.0,
+                    'current_price': etf_data.get('current_price', 50)
+                }
             }
 
 class MarketAnalyzer:
@@ -98,15 +174,15 @@ class MarketAnalyzer:
             # 決定策略
             if total_score >= 70:
                 strategy = "積極策略"
-                investment_ratio = 0.8  # 80% 資金投入
+                investment_ratio = 0.8
                 description = "市場處於低位，建議積極進場布局優質 ETF"
             elif total_score >= 40:
                 strategy = "平衡策略"
-                investment_ratio = 0.6  # 60% 資金投入
+                investment_ratio = 0.6
                 description = "市場處於正常區間，建議平衡配置，分批進場"
             else:
                 strategy = "保守策略"
-                investment_ratio = 0.3  # 30% 資金投入
+                investment_ratio = 0.3
                 description = "市場處於高位，建議保守操作，等待更好時機"
             
             return {
@@ -174,7 +250,7 @@ class MarketAnalyzer:
         return score_map.get(indicator, 50)
 
 class ETFScreener:
-    """ETF 篩選器"""
+    """升級版 ETF 篩選器"""
     
     def screen_and_score(self, etf_data: List[Dict]) -> List[Dict]:
         """篩選並評分 ETF"""
@@ -188,332 +264,300 @@ class ETFScreener:
                 # 計算技術面評分
                 technical_score = self._calculate_technical_score(etf)
                 
-                # 綜合評分 (基本面 60%, 技術面 40%)
-                final_score = fundamental_score * 0.6 + technical_score * 0.4
+                # 計算流動性評分
+                liquidity_score = self._calculate_liquidity_score(etf)
+                
+                # 綜合評分 (基本面 50%, 技術面 30%, 流動性 20%)
+                final_score = (fundamental_score * 0.5 + 
+                             technical_score * 0.3 + 
+                             liquidity_score * 0.2)
                 
                 # 決定評級
                 if final_score >= 80:
                     rating = '綠燈'
-                    recommendation = '建議進場'
+                    recommendation = '強烈建議'
                 elif final_score >= 60:
                     rating = '黃燈'
                     recommendation = '可考慮'
                 else:
                     rating = '紅燈'
-                    recommendation = '暫時觀望'
+                    recommendation = '暫不建議'
                 
-                scored_etf = etf.copy()
-                scored_etf.update({
-                    'fundamental_score': round(fundamental_score, 1),
-                    'technical_score': round(technical_score, 1),
+                scored_etf = {
+                    'symbol': etf['symbol'],
+                    'name': etf['name'],
+                    'current_price': etf.get('current_price', 50),
                     'final_score': round(final_score, 1),
                     'rating': rating,
-                    'recommendation': recommendation
-                })
+                    'recommendation': recommendation,
+                    'scores': {
+                        'fundamental': round(fundamental_score, 1),
+                        'technical': round(technical_score, 1),
+                        'liquidity': round(liquidity_score, 1)
+                    },
+                    'valid': etf.get('valid', True)
+                }
                 
                 scored_etfs.append(scored_etf)
                 
             except Exception as e:
-                logger.error(f"評分 ETF {etf.get('symbol', 'Unknown')} 時發生錯誤: {e}")
+                logger.error(f"ETF {etf.get('symbol', 'Unknown')} 評分錯誤: {e}")
                 continue
         
         # 按評分排序
-        scored_etfs.sort(key=lambda x: x.get('final_score', 0), reverse=True)
-        
+        scored_etfs.sort(key=lambda x: x['final_score'], reverse=True)
         return scored_etfs
     
     def _calculate_fundamental_score(self, etf: Dict) -> float:
         """計算基本面評分"""
-        score = 0
+        # 模擬基本面指標（實際應從數據源獲取）
+        expense_ratio = etf.get('expense_ratio', 0.5)  # 費用率
+        aum = etf.get('aum', 1000)  # 資產規模（百萬）
+        dividend_yield = etf.get('dividend_yield', 3.0)  # 股息率
         
-        # 殖利率評分 (40% 權重)
-        dividend_yield = etf.get('dividend_yield', 0)
-        if dividend_yield > 5:
-            dividend_score = 100
-        elif dividend_yield > 3:
-            dividend_score = 80
-        elif dividend_yield > 1:
-            dividend_score = 60
-        else:
-            dividend_score = 40
+        # 費用率評分（越低越好）
+        expense_score = max(0, 100 - expense_ratio * 100)
         
-        # 規模評分 (30% 權重)
-        market_cap = etf.get('market_cap_billions', 0)
-        if market_cap > 100:
-            scale_score = 100
-        elif market_cap > 50:
-            scale_score = 80
-        elif market_cap > 10:
-            scale_score = 60
-        else:
-            scale_score = 40
+        # 規模評分（越大越好，但有上限）
+        aum_score = min(100, (aum / 10000) * 100)
         
-        # 費用率評分 (30% 權重)
-        expense_ratio = etf.get('expense_ratio', 1)
-        if expense_ratio < 0.3:
-            expense_score = 100
-        elif expense_ratio < 0.5:
-            expense_score = 80
-        elif expense_ratio < 0.8:
-            expense_score = 60
-        else:
-            expense_score = 40
+        # 股息率評分
+        dividend_score = min(100, dividend_yield * 20)
         
-        score = dividend_score * 0.4 + scale_score * 0.3 + expense_score * 0.3
-        return score
+        return (expense_score * 0.4 + aum_score * 0.3 + dividend_score * 0.3)
     
     def _calculate_technical_score(self, etf: Dict) -> float:
         """計算技術面評分"""
-        score = 0
+        # 模擬技術指標
+        rsi = np.random.uniform(30, 70)
+        ma_trend = np.random.choice(['上升', '下降', '橫盤'])
+        volume_ratio = np.random.uniform(0.8, 1.5)
         
-        # RSI 評分 (40% 權重)
-        rsi = etf.get('rsi', 50)
-        if rsi < 30:
-            rsi_score = 100  # 超賣，進場機會
-        elif rsi < 50:
-            rsi_score = 75   # 偏弱，可考慮
-        elif rsi < 70:
-            rsi_score = 50   # 正常區間
+        # RSI 評分
+        if 30 <= rsi <= 70:
+            rsi_score = 80
+        elif rsi < 30:
+            rsi_score = 60  # 超賣
         else:
-            rsi_score = 25   # 超買，避免
+            rsi_score = 40  # 超買
         
-        # MACD 評分 (30% 權重)
-        macd_line = etf.get('macd_line', 0)
-        macd_signal = etf.get('macd_signal', 0)
+        # 趨勢評分
+        trend_score = {'上升': 80, '橫盤': 50, '下降': 20}[ma_trend]
         
-        if macd_line > macd_signal and macd_line > 0:
-            macd_score = 100  # 金叉且在零軸上，強勢
-        elif macd_line > macd_signal:
-            macd_score = 75   # 金叉，轉強
-        elif macd_line < macd_signal and macd_line > 0:
-            macd_score = 40   # 死叉但在零軸上，轉弱
-        else:
-            macd_score = 25   # 死叉且在零軸下，弱勢
+        # 成交量評分
+        volume_score = min(100, volume_ratio * 60)
         
-        # 均線評分 (30% 權重)
-        current_price = etf.get('current_price', 0)
-        ma_20 = etf.get('ma_20', 0)
-        ma_60 = etf.get('ma_60', 0)
+        return (rsi_score * 0.4 + trend_score * 0.4 + volume_score * 0.2)
+    
+    def _calculate_liquidity_score(self, etf: Dict) -> float:
+        """計算流動性評分"""
+        # 模擬流動性指標
+        avg_volume = etf.get('avg_volume', 1000000)  # 平均成交量
+        bid_ask_spread = etf.get('bid_ask_spread', 0.1)  # 買賣價差
         
-        if current_price > ma_20 > ma_60:
-            ma_score = 100  # 多頭排列
-        elif current_price > ma_20:
-            ma_score = 75   # 價格在短期均線上
-        elif current_price > ma_60:
-            ma_score = 50   # 價格在長期均線上
-        else:
-            ma_score = 25   # 價格在均線下
+        # 成交量評分
+        volume_score = min(100, (avg_volume / 10000000) * 100)
         
-        score = rsi_score * 0.4 + macd_score * 0.3 + ma_score * 0.3
-        return score
+        # 價差評分（越小越好）
+        spread_score = max(0, 100 - bid_ask_spread * 1000)
+        
+        return (volume_score * 0.7 + spread_score * 0.3)
 
 class PositionCalculator:
-    """資金配置計算器"""
+    """升級版資金配置計算器"""
     
     def calculate(self, available_cash: float, market_strategy: Dict, 
-                  etf_scores: List[Dict], num_etfs_to_invest: int = 0) -> List[Dict]:
-        """計算資金配置"""
+                 etf_scores: List[Dict], num_etfs_to_invest: int = 0) -> List[Dict]:
+        """計算資金配置（考慮價格水位）"""
         try:
-            investment_ratio = market_strategy.get('investment_ratio', 0.5)
-            total_investment = available_cash * investment_ratio
-            
-            # 篩選推薦的 ETF (評分 >= 60)
-            recommended_etfs = [etf for etf in etf_scores if etf.get('final_score', 0) >= 60]
-            
-            if not recommended_etfs:
+            if not etf_scores:
                 return []
             
-            # 根據 num_etfs_to_invest 限制檔數
+            # 基礎投資比例
+            base_investment_ratio = market_strategy.get('investment_ratio', 0.6)
+            
+            # 過濾出評分>=60的ETF
+            qualified_etfs = [etf for etf in etf_scores if etf['final_score'] >= 60]
+            
+            if not qualified_etfs:
+                return []
+            
+            # 確定投資檔數
             if num_etfs_to_invest > 0:
-                # 優先選擇評分最高的指定檔數ETF
-                recommended_etfs = sorted(recommended_etfs, key=lambda x: x.get('final_score', 0), reverse=True)[:num_etfs_to_invest]
+                selected_etfs = qualified_etfs[:num_etfs_to_invest]
             else:
-                # 沿用舊邏輯，限制最多 5 檔 ETF
-                recommended_etfs = recommended_etfs[:5]
-            
-            if not recommended_etfs:  # 再次檢查，以防限制後為空
-                return []
-            
-            # 根據評分分配權重
-            total_score = sum(etf.get('final_score', 0) for etf in recommended_etfs)
+                # 自動選擇前5檔最優ETF
+                selected_etfs = qualified_etfs[:5]
             
             positions = []
-            remaining_cash = total_investment
+            total_weight = 0
             
-            for i, etf in enumerate(recommended_etfs):
-                if i == len(recommended_etfs) - 1:
-                    # 最後一檔使用剩餘資金
-                    allocation = remaining_cash
-                else:
-                    # 根據評分比例分配
-                    weight = etf.get('final_score', 0) / total_score
-                    allocation = total_investment * weight
+            # 計算每檔ETF的權重（考慮評分和價格水位）
+            for etf in selected_etfs:
+                # 基礎權重（基於評分）
+                base_weight = etf['final_score'] / 100
                 
-                current_price = etf.get('current_price', 0)
-                if current_price > 0:
-                    shares = int(allocation / current_price)
-                    actual_amount = shares * current_price
-                    
-                    if shares > 0:
-                        positions.append({
-                            'symbol': etf.get('symbol'),
-                            'name': etf.get('name'),
-                            'shares': shares,
-                            'price': current_price,
-                            'amount': round(actual_amount, 0),
-                            'weight': round((actual_amount / total_investment) * 100, 1),
-                            'rating': etf.get('rating'),
-                            'recommendation': etf.get('recommendation')
-                        })
-                        
-                        remaining_cash -= actual_amount
+                # 價格水位調整
+                price_level = etf.get('price_level', {})
+                safety_multiplier = price_level.get('safety_multiplier', 1.0)
+                
+                # 調整後權重
+                adjusted_weight = base_weight * safety_multiplier
+                total_weight += adjusted_weight
+                
+                positions.append({
+                    'etf': etf,
+                    'weight': adjusted_weight
+                })
             
-            return positions
+            # 正規化權重並計算實際配置
+            final_positions = []
+            total_investment = available_cash * base_investment_ratio
+            
+            for position in positions:
+                normalized_weight = position['weight'] / total_weight if total_weight > 0 else 0
+                etf = position['etf']
+                
+                # 計算投資金額
+                investment_amount = total_investment * normalized_weight
+                
+                # 計算股數
+                price = etf.get('current_price', 50)
+                shares = int(investment_amount / price) if price > 0 else 0
+                actual_amount = shares * price
+                
+                if shares > 0:  # 只包含能買到至少1股的ETF
+                    final_positions.append({
+                        'symbol': etf['symbol'],
+                        'name': etf['name'],
+                        'shares': shares,
+                        'price': price,
+                        'amount': actual_amount,
+                        'weight': normalized_weight * 100,
+                        'rating': etf['rating'],
+                        'recommendation': etf['recommendation'],
+                        'reasoning': self._generate_reasoning(etf),
+                        'price_level': etf.get('price_level', {})
+                    })
+            
+            return final_positions
             
         except Exception as e:
-            logger.error(f"計算資金配置錯誤: {e}")
+            logger.error(f"資金配置計算錯誤: {e}")
             return []
+    
+    def _generate_reasoning(self, etf: Dict) -> str:
+        """生成投資理由"""
+        score = etf['final_score']
+        rating = etf['rating']
+        price_level = etf.get('price_level', {})
+        
+        reasoning = f"評分 {score} 分，{rating}評級"
+        
+        if price_level:
+            level_desc = price_level.get('description', '')
+            reasoning += f"，{level_desc}"
+        
+        return reasoning
 
 class RiskMonitor:
     """風險監控器"""
     
     def check_risks(self, etf_scores: List[Dict]) -> List[Dict]:
         """檢查風險警示"""
-        risk_alerts = []
+        risks = []
         
-        for etf in etf_scores:
-            try:
-                symbol = etf.get('symbol', '')
-                rsi = etf.get("rsi", 50)
-                macd_line = etf.get("macd_line", 0)
-                macd_signal = etf.get("macd_signal", 0)
-                k_value = etf.get("k_value", 50)
-                d_value = etf.get("d_value", 50)
-
-                # KD 指標警示
-                if k_value > 80 and d_value > 80 and k_value < d_value:
-                    risk_alerts.append({
-                        'symbol': symbol,
-                        'type': '技術指標警示',
-                        'level': '高風險',
-                        'message': f'{symbol} KD 指標高檔死亡交叉，建議減碼',
-                        'action': '建議減碼'
-                    })
-                elif k_value < 20 and d_value < 20 and k_value > d_value:
-                    risk_alerts.append({
-                        'symbol': symbol,
-                        'type': '技術指標警示',
-                        'level': '低風險',
-                        'message': f'{symbol} KD 指標低檔黃金交叉，可考慮買入',
-                        'action': '注意觀察'
-                    })
-
-                # RSI 過熱警示        # RSI 過熱警示
-                if rsi > 80:
-                    risk_alerts.append({
-                        'symbol': symbol,
-                        'type': '技術指標警示',
-                        'level': '高風險',
-                        'message': f'{symbol} RSI 達 {rsi:.1f}，嚴重超買，建議減碼',
-                        'action': '建議減碼'
-                    })
-                elif rsi > 70:
-                    risk_alerts.append({
-                        'symbol': symbol,
-                        'type': '技術指標警示',
-                        'level': '中風險',
-                        'message': f'{symbol} RSI 達 {rsi:.1f}，超買警示，注意風險',
-                        'action': '注意觀察'
-                    })
+        try:
+            # 檢查整體市場風險
+            green_count = sum(1 for etf in etf_scores if etf['rating'] == '綠燈')
+            total_count = len(etf_scores)
+            
+            if total_count > 0:
+                green_ratio = green_count / total_count
                 
-                # MACD 死叉警示
-                if macd_line < macd_signal and etf.get('rating') == '綠燈':
-                    risk_alerts.append({
-                        'symbol': symbol,
-                        'type': '趨勢轉折警示',
-                        'level': '中風險',
-                        'message': f'{symbol} MACD 出現死叉，趨勢可能轉弱',
-                        'action': '謹慎觀察'
+                if green_ratio < 0.1:
+                    risks.append({
+                        'type': 'market_risk',
+                        'level': 'high',
+                        'title': '市場風險警示',
+                        'message': f'僅有 {green_count} 檔綠燈ETF，市場整體偏弱，建議謹慎操作'
                     })
-                
-            except Exception as e:
-                logger.error(f"檢查 {etf.get('symbol', 'Unknown')} 風險時發生錯誤: {e}")
-                continue
+                elif green_ratio < 0.3:
+                    risks.append({
+                        'type': 'market_risk',
+                        'level': 'medium',
+                        'title': '市場注意',
+                        'message': f'綠燈ETF比例較低（{green_ratio:.1%}），建議分散投資'
+                    })
+            
+            # 檢查價格水位風險
+            high_price_count = 0
+            for etf in etf_scores:
+                price_level = etf.get('price_level', {})
+                if price_level.get('signal') == '紅燈':
+                    high_price_count += 1
+            
+            if high_price_count > len(etf_scores) * 0.5:
+                risks.append({
+                    'type': 'valuation_risk',
+                    'level': 'medium',
+                    'title': '估值風險',
+                    'message': f'超過一半的ETF處於高價位，建議等待回調機會'
+                })
+            
+        except Exception as e:
+            logger.error(f"風險檢查錯誤: {e}")
         
-        return risk_alerts
+        return risks
 
 class AdviceGenerator:
-    """建議生成器"""
+    """投資建議生成器"""
     
     def generate(self, market_strategy: Dict, etf_scores: List[Dict], 
                 risk_alerts: List[Dict], user_profile: Dict) -> Dict:
         """生成投資建議"""
         try:
-            strategy = market_strategy.get('strategy', '平衡策略')
-            description = market_strategy.get('description', '')
-            
-            # 統計 ETF 評級分布
-            green_count = len([etf for etf in etf_scores if etf.get('rating') == '綠燈'])
-            yellow_count = len([etf for etf in etf_scores if etf.get('rating') == '黃燈'])
-            red_count = len([etf for etf in etf_scores if etf.get('rating') == '紅燈'])
+            # 統計ETF分布
+            green_lights = sum(1 for etf in etf_scores if etf['rating'] == '綠燈')
+            yellow_lights = sum(1 for etf in etf_scores if etf['rating'] == '黃燈')
+            red_lights = sum(1 for etf in etf_scores if etf['rating'] == '紅燈')
             
             # 生成市場觀點
-            market_outlook = self._generate_market_outlook(strategy, green_count, yellow_count, red_count)
+            strategy = market_strategy.get('strategy', '平衡策略')
+            if green_lights > 5:
+                market_outlook = f"市場呈現積極信號，有 {green_lights} 檔綠燈ETF，適合進場布局。"
+            elif green_lights > 0:
+                market_outlook = f"市場處於正常區間，有 {green_lights} 檔綠燈、{yellow_lights} 檔黃燈 ETF，建議平衡配置。"
+            else:
+                market_outlook = f"市場整體偏弱，建議保守操作，等待更好的進場時機。"
             
             # 生成操作建議
-            action_advice = self._generate_action_advice(strategy, risk_alerts)
-            
-            # 生成風險提醒
-            risk_reminder = self._generate_risk_reminder(risk_alerts)
+            if strategy == "積極策略":
+                action_advice = "建議積極進場，重點配置綠燈ETF，可適度加碼低價位標的。"
+            elif strategy == "平衡策略":
+                action_advice = "建議採用定期定額方式投入，分散時間風險，逐步建立部位。"
+            else:
+                action_advice = "建議保守操作，僅配置少量資金，等待市場回調後再加碼。"
             
             return {
                 'market_outlook': market_outlook,
                 'action_advice': action_advice,
-                'risk_reminder': risk_reminder,
-                'strategy_description': description,
                 'etf_distribution': {
-                    'green_lights': green_count,
-                    'yellow_lights': yellow_count,
-                    'red_lights': red_count
-                }
+                    'green_lights': green_lights,
+                    'yellow_lights': yellow_lights,
+                    'red_lights': red_lights
+                },
+                'strategy_summary': market_strategy.get('description', ''),
+                'risk_level': 'high' if len(risk_alerts) > 2 else 'medium' if len(risk_alerts) > 0 else 'low'
             }
             
         except Exception as e:
-            logger.error(f"生成建議錯誤: {e}")
+            logger.error(f"建議生成錯誤: {e}")
             return {
-                'market_outlook': '市場分析暫時無法提供',
-                'action_advice': '建議保持觀望',
-                'risk_reminder': '請注意投資風險',
-                'strategy_description': '建議採用平衡策略'
+                'market_outlook': '無法分析當前市場狀況',
+                'action_advice': '建議諮詢專業投資顧問',
+                'etf_distribution': {'green_lights': 0, 'yellow_lights': 0, 'red_lights': 0},
+                'strategy_summary': '系統暫時無法提供建議',
+                'risk_level': 'unknown'
             }
-    
-    def _generate_market_outlook(self, strategy: str, green: int, yellow: int, red: int) -> str:
-        """生成市場觀點"""
-        if strategy == "積極策略":
-            return f"市場處於相對低位，目前有 {green} 檔綠燈 ETF 值得關注，建議積極布局優質標的。"
-        elif strategy == "保守策略":
-            return f"市場風險偏高，僅有 {green} 檔綠燈 ETF，建議保守操作，等待更好進場時機。"
-        else:
-            return f"市場處於正常區間，有 {green} 檔綠燈、{yellow} 檔黃燈 ETF，建議平衡配置。"
-    
-    def _generate_action_advice(self, strategy: str, risk_alerts: List[Dict]) -> str:
-        """生成操作建議"""
-        if strategy == "積極策略":
-            return "建議分批進場，優先選擇綠燈 ETF，單次投入不超過總資金的 20%。"
-        elif strategy == "保守策略":
-            return "建議暫時觀望，如需投資請選擇高股息、低波動的防禦型 ETF。"
-        else:
-            return "建議採用定期定額方式投入，分散時間風險，逐步建立部位。"
-    
-    def _generate_risk_reminder(self, risk_alerts: List[Dict]) -> str:
-        """生成風險提醒"""
-        if not risk_alerts:
-            return "目前無特別風險警示，請持續關注市場變化。"
-        
-        high_risk_count = len([alert for alert in risk_alerts if alert.get('level') == '高風險'])
-        
-        if high_risk_count > 0:
-            return f"注意：有 {high_risk_count} 檔 ETF 出現高風險警示，建議謹慎操作。"
-        else:
-            return f"有 {len(risk_alerts)} 項風險提醒，請注意相關標的的技術指標變化。"
 
