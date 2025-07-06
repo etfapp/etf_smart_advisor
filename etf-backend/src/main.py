@@ -3,7 +3,7 @@
 import os
 from flask import Flask, jsonify, abort, request
 from flask_cors import CORS
-from data_fetcher import get_twse_etf_list, fetch_with_fallback
+from src.data_fetcher import get_twse_etf_list, fetch_with_fallback
 
 app = Flask(__name__)
 
