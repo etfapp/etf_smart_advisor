@@ -11,6 +11,7 @@ from data_fetcher import ImprovedDataFetcher
 from investment_engine import ImprovedInvestmentEngine
 from risk_manager import RiskManager
 from portfolio_manager import PortfolioManager
+from daily_recommendation_api import add_daily_recommendation_routes
 
 # 配置日誌
 logging.basicConfig(level=logging.INFO)
@@ -40,6 +41,10 @@ def initialize_app():
         portfolio_manager = PortfolioManager()
         
         logger.info("應用初始化成功")
+        
+        # 註冊每日推薦API路由
+        add_daily_recommendation_routes(app, data_fetcher, investment_engine, risk_manager)
+        logger.info("每日推薦API路由已註冊")
         
     except Exception as e:
         logger.error(f"應用初始化失敗: {e}")

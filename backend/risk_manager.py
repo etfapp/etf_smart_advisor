@@ -460,3 +460,210 @@ class RiskManager:
                 'error': str(e)
             }
 
+
+    def assess_recommendations_risk(self, recommendations: List[Dict]) -> Dict:
+        """評估投資推薦的風險"""
+        try:
+            if not recommendations:
+                return {
+                    'overall_risk': 'low',
+                    'risk_score': 0,
+                    'warnings': [],
+                    'recommendations_count': 0
+                }
+            
+            # 計算推薦的總金額和分佈
+            total_amount = sum(rec.get('suggested_amount', 0) for rec in recommendations)
+            
+            if total_amount <= 0:
+                return {
+                    'overall_risk': 'low',
+                    'risk_score': 0,
+                    'warnings': ['沒有推薦投資金額'],
+                    'recommendations_count': len(recommendations)
+                }
+            
+            # 分析推薦的風險特徵
+            risk_factors = {
+                'concentration': self._assess_recommendations_concentration(recommendations, total_amount),
+                'volatility': self._assess_recommendations_volatility(recommendations),
+                'diversification': self._assess_recommendations_diversification(recommendations)
+            }
+            
+            # 計算綜合風險分數
+            risk_score = (
+                risk_factors['concentration']['score'] * 0.4 +
+                risk_factors['volatility']['score'] * 0.4 +
+                risk_factors['diversification']['score'] * 0.2
+            )
+            
+            # 確定風險等級
+            if risk_score < 30:
+                overall_risk = 'low'
+            elif risk_score < 60:
+                overall_risk = 'medium'
+            else:
+                overall_risk = 'high'
+            
+            # 生成警告
+            warnings = []
+            if risk_factors['concentration']['level'] == 'high':
+                warnings.append('推薦投資過於集中，建議分散配置')
+            if risk_factors['volatility']['level'] == 'high':
+                warnings.append('推薦ETF整體波動率較高，注意風險')
+            if risk_factors['diversification']['level'] == 'low':
+                warnings.append('推薦ETF類別不夠多元化')
+            
+            return {
+                'overall_risk': overall_risk,
+                'risk_score': risk_score,
+                'warnings': warnings,
+                'recommendations_count': len(recommendations),
+                'risk_factors': risk_factors,
+                'total_amount': total_amount
+            }
+            
+        except Exception as e:
+            logger.error(f"Error assessing recommendations risk: {e}")
+            return {
+                'overall_risk': 'medium',
+                'risk_score': 50,
+                'warnings': ['風險評估暫時無法完成'],
+                'recommendations_count': len(recommendations) if recommendations else 0
+            }
+    
+    def _assess_recommendations_concentration(self, recommendations: List[Dict], total_amount: float) -> Dict:
+        """評估推薦的集中度風險"""
+        if not recommendations or total_amount <= 0:
+            return {'score': 0, 'level': 'low'}
+        
+        # 計算各推薦的比例
+        ratios = []
+        for rec in recommendations:
+            amount = rec.get('suggested_amount', 0)
+            if amount > 0:
+                ratios.append(amount / total_amount)
+        
+        if not ratios:
+            return {'score': 0, 'level': 'low'}
+        
+        # 找出最大比例
+        max_ratio = max(ratios)
+        
+        # 計算集中度分數
+        if max_ratio > 0.4:  # 單一推薦超過40%
+            score = min(100, (max_ratio - 0.4) * 200)
+            level = 'high'
+        elif max_ratio > 0.25:  # 單一推薦超過25%
+            score = (max_ratio - 0.25) / 0.15 * 50 + 30
+            level = 'medium'
+        else:
+            score = max_ratio / 0.25 * 30
+            level = 'low'
+        
+        return {
+            'score': score,
+            'level': level,
+            'max_ratio': max_ratio,
+            'ratios': ratios
+        }
+    
+    def _assess_recommendations_volatility(self, recommendations: List[Dict]) -> Dict:
+        """評估推薦的波動率風險"""
+        if not recommendations:
+            return {'score': 0, 'level': 'low'}
+        
+        volatilities = []
+        weights = []
+        
+        for rec in recommendations:
+            symbol = rec.get('symbol')
+            amount = rec.get('suggested_amount', 0)
+            
+            if symbol and amount > 0:
+                # 獲取ETF數據
+                try:
+                    etf_data = self.data_fetcher.fetch_etf_data(symbol)
+                    if etf_data and etf_data.get('price_data'):
+                        volatility = etf_data['price_data'].get('volatility', 0.2)
+                        volatilities.append(volatility)
+                        weights.append(amount)
+                except:
+                    # 如果無法獲取數據，使用預設值
+                    volatilities.append(0.2)
+                    weights.append(amount)
+        
+        if not volatilities:
+            return {'score': 50, 'level': 'medium'}
+        
+        # 計算加權平均波動率
+        total_weight = sum(weights)
+        if total_weight > 0:
+            avg_volatility = sum(v * w for v, w in zip(volatilities, weights)) / total_weight
+        else:
+            avg_volatility = np.mean(volatilities)
+        
+        # 計算波動率風險分數
+        if avg_volatility > 0.25:
+            score = min(100, (avg_volatility - 0.25) * 400)
+            level = 'high'
+        elif avg_volatility > 0.15:
+            score = (avg_volatility - 0.15) / 0.10 * 50 + 30
+            level = 'medium'
+        else:
+            score = avg_volatility / 0.15 * 30
+            level = 'low'
+        
+        return {
+            'score': score,
+            'level': level,
+            'avg_volatility': avg_volatility,
+            'individual_volatilities': volatilities
+        }
+    
+    def _assess_recommendations_diversification(self, recommendations: List[Dict]) -> Dict:
+        """評估推薦的分散化程度"""
+        if not recommendations:
+            return {'score': 100, 'level': 'low'}  # 沒有推薦 = 分散化不足
+        
+        # 獲取所有推薦ETF的類別
+        categories = []
+        for rec in recommendations:
+            symbol = rec.get('symbol')
+            if symbol:
+                try:
+                    category = self.data_fetcher.get_etf_category(symbol)
+                    if category:
+                        categories.append(category)
+                except:
+                    pass
+        
+        if not categories:
+            return {'score': 50, 'level': 'medium'}
+        
+        # 計算類別多樣性
+        unique_categories = len(set(categories))
+        total_recommendations = len(recommendations)
+        
+        # 分散化分數（分數越低越好）
+        if unique_categories >= 4:  # 4個或以上不同類別
+            score = 0
+            level = 'low'  # 低風險（高分散化）
+        elif unique_categories >= 3:  # 3個不同類別
+            score = 20
+            level = 'low'
+        elif unique_categories >= 2:  # 2個不同類別
+            score = 50
+            level = 'medium'
+        else:  # 只有1個類別
+            score = 100
+            level = 'high'  # 高風險（低分散化）
+        
+        return {
+            'score': score,
+            'level': level,
+            'unique_categories': unique_categories,
+            'total_recommendations': total_recommendations,
+            'categories': categories
+        }
+
