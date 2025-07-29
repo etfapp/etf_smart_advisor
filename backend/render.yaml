@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: etf-advisor-backend
+    env: python
+    region: oregon
+    plan: free
+    buildCommand: |
+      pip install --upgrade pip setuptools wheel
+      pip install -r requirements.txt
+    startCommand: python app.py
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: RENDER
+        value: true
+      - key: PYTHON_VERSION
+        value: 3.11.9
+    healthCheckPath: /api/health
+

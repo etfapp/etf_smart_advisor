@@ -1,11 +1,29 @@
-setuptools>=68.0
-wheel
+# 基礎建置工具 - 必須優先安裝
+setuptools>=65.0.0
+wheel>=0.38.0
+pip>=22.0.0
+
+# Web框架
 Flask==2.3.3
 Flask-CORS==4.0.0
-yfinance==0.2.18
+gunicorn==21.2.0
+
+# 數據處理
 pandas==2.0.3
 numpy==1.24.3
+
+# 金融數據
+yfinance==0.2.18
+
+# HTTP請求
 requests==2.31.0
-gunicorn==21.2.0
+
+# 環境變數
 python-dotenv==1.0.0
+
+# 日期時間處理
+python-dateutil>=2.8.0
+
+# 數學計算
+scipy>=1.10.0
 
