@@ -11,8 +11,8 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
 # 引入專案模組
 from src.models.user import db
 from src.routes.user import user_bp
-from src.data_fetcher import DataFetcher
-from src.investment_engine import InvestmentEngine
+from src.data_fetcher_optimized import OptimizedDataFetcher
+from src.investment_engine_optimized import OptimizedInvestmentEngine
 
 # 設定日誌
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
@@ -39,8 +39,8 @@ with app.app_context():
 app.register_blueprint(user_bp, url_prefix='/api')
 
 # 初始化核心模組
-data_fetcher = DataFetcher()
-investment_engine = InvestmentEngine()
+data_fetcher = OptimizedDataFetcher()
+investment_engine = OptimizedInvestmentEngine()
 
 @app.errorhandler(404)
 def not_found_error(error):
@@ -175,7 +175,7 @@ def serve(path):
 if __name__ == '__main__':
     # 在生產環境中，請使用 Gunicorn 或其他 WSGI 伺服器來運行應用程式
     # 例如：gunicorn -w 4 main:app -b 0.0.0.0:5000
-    port = int(os.environ.get('PORT', 5000))
+    port = int(os.environ.get('PORT', 5001))
     app.run(host='0.0.0.0', port=port, debug=True)
 
 
